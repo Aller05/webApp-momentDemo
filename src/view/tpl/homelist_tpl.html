@@ -1,0 +1,22 @@
+<div class="homemain">
+
+
+    <div class="list" ng-repeat="(key,list) in homelist" ui-sref="app.detail({index:key})">
+        <span ng-if="list.column.name != ''" class="smallTitle" ng-bind="list.column.name"></span>
+        <p ng-bind="list.title" class="listtitle" ng-class="{onlyPicTitleMarginBottom:true}"></p>
+        <div class="post1" ng-if="list.display_style == 10002">
+            <p ng-bind="list.abstract"></p>
+            <span>
+                <img ng-src="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}" alt="">
+            </span>
+        </div>
+        <div class="post2" ng-if="list.display_style == 10003">
+            <img ng-src="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}" alt="">
+            <div class="border1"></div>
+            <div class="border2"></div>
+        </div>
+        <div class="post3" ng-if="list.display_style == 10001">
+            <p ng-bind="list.abstract"></p>
+        </div>
+    </div>
+</div>

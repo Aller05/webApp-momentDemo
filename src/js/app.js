@@ -17,5 +17,6 @@
                 $scope.isNav = true;
             }
         };
+
     }])
 })(angular);

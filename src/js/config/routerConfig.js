@@ -8,7 +8,7 @@
             url:'/app',
             views:{
                 home:{
-                    templateUrl:'../view/home_tpl.html',
+                    templateUrl:'view/home_tpl.html',
                     controller:'homeController'
                 },
                 author:{

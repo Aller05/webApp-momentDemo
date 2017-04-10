@@ -9,12 +9,13 @@
 <body>
 <!--下面是否添加的类,指的是当nav图标被点击时,是否添加那个类名(在index.less里)-->
 <div id="mainContent" ng-class="{navClickMainContent:isNav}">
-    <nav></nav>
+    <!--<nav></nav>-->
 
     <div ng-show="title == '今日一刻'" ui-view="home"></div>
     <div ng-show="title == '作者'" ui-view="author"></div>
     <div ng-show="title == '栏目'" ui-view="content"></div>
     <div ng-show="title == '我的'" ui-view="my"></div>
+
 
     <tabbar></tabbar>
 </div>
@@ -24,7 +25,7 @@
     var font = window.screen.width/10 + 'px';
     document.getElementsByTagName('html')[0].style.fontSize = font;
 </script>
-<script src="lib/angular/angular.js"></script>
-<script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
 <script src="js/index.js"></script>
 </html>

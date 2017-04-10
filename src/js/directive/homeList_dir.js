@@ -5,7 +5,7 @@
     angular.module('app').directive('homelist',function () {
         return{
             restrict:'EA',
-            templateUrl:'../view/tpl/homelist_tpl.html'
+            templateUrl:'view/tpl/homelist_tpl.html'
         }
     })
 })(angular);

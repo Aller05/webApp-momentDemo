@@ -1,17 +1,18 @@
 <div class="homemain">
 
 
-    <div class="list" ng-repeat="(key,list) in homelist" ui-sref="app.detail({index:key})">
+    <div class="list" ng-repeat="(key,list) in homelist" ui-sref="app.detail({index:key})"><!--当点击home列表内容时,跳转到详情页路由,参数为索引值-->
         <span ng-if="list.column.name != ''" class="smallTitle" ng-bind="list.column.name"></span>
         <p ng-bind="list.title" class="listtitle" ng-class="{onlyPicTitleMarginBottom:true}"></p>
         <div class="post1" ng-if="list.display_style == 10002">
             <p ng-bind="list.abstract"></p>
-            <span>
-                <img ng-src="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}" alt="">
+            <span style="background-image: url(http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl={{list.thumbs[0].small.url}})">
             </span>
         </div>
         <div class="post2" ng-if="list.display_style == 10003">
-            <img ng-src="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}" alt="">
+            <div class="post2-img">
+                <img id="post2Img" ng-src="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}" style="top:{{-list.thumbs[0].small.height/2+100+'px'}}">
+            </div>
             <div class="border1"></div>
             <div class="border2"></div>
         </div>

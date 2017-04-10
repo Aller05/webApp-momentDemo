@@ -35,9 +35,9 @@
             //10001 无图  10002有图有文字  10003有图无文字
         }).state('app.detail',{
             url:'/detail/:index',
+            //根据参数的索引值,取出当前点击的为哪一个,获取详细内容
             controller:['$scope','$stateParams',function ($scope, $stateParams) {
                 $scope.listItem = $scope.homelist[$stateParams.index];
-
             }],
             template:'<detail></detail>'
 

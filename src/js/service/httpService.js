@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/4/8.
  */
-;(function (angular) {
+;(function (angular) { //封装ajax,提高扩展性
     angular.module('app').service('myHttp',['$http',function ($http) {
         this.getHttp = function (args, success, error) {
             if(args.method == 'post'){

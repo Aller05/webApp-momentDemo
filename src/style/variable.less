@@ -1,12 +1,8 @@
-/*屏幕的宽度/比例（10）
-375 ipone6屏幕宽度
-375/ 10 = 37.5
-*/
 /*把像素转成rem*/
+@px:1px;
 .fs(@px){
   font-size: unit(@px/37.5,rem);
 }
-
 .w(@px){
   width: unit(@px/37.5,rem);
 }
@@ -15,6 +11,9 @@
 }
 .lh(@px){
   line-height: unit(@px/37.5,rem);
+}
+.p(@px){
+  padding:unit(@px/37.5,rem);
 }
 .pl(@px){
   padding-left: unit(@px/37.5,rem);
@@ -52,6 +51,13 @@
 }
 .right(@px){
   right:unit(@px/37.5,rem);
+}
+
+.borderwidth(@px){
+  border-width: unit(@px/37.5,rem);
+}
+.borderradius(@tl,@tr,@bl,@br){
+  border-radius:unit(@tl/37.5,rem) unit(@tr/37.5,rem) unit(@bl/37.5,rem) unit(@br/37.5,rem) ;
 }
 
 .padding(@tb,@lr){

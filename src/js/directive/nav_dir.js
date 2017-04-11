@@ -18,7 +18,6 @@
                         ele.find('img')[1].style.display='block';
                     }
                 });
-
                 $scope.goBack = function () {
                     window.history.back();
                     ele.find('img')[0].style.display='block';

@@ -5,20 +5,25 @@
   .right(0);
   .bottom(0);
   position: fixed;
-  border-top: 1px solid #ccc;
+  border-top: solid #ccc;
+  .borderwidth(1);
   ul{
-    display: flex;
+    width: 100%;
     list-style: none;
     li{
-      flex:1;
+      width: 25%;
+      float: left;
       text-align: center;
       img{
         .w(22);
         .h(22);
+        vertical-align: middle;
+        .mt(5);
       }
       span{
         .fs(16);
         display: block;
+
       }
     }
   }

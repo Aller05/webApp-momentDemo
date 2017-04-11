@@ -1,13 +1,14 @@
 .homemain{
   background-color: #f9f9f9;
-  padding-top: 80px;
+  .pt(80);
   box-sizing: border-box;
   .mb(60);
   .list{
     height: auto;
-    border-top: 1px solid #ccc;
+    border-top: solid #ccc;
+    .borderwidth(1);
     position: relative;
-    padding: 20px;
+    .p(20);
     .pt(0);
     box-sizing: border-box;
     .smallTitle{
@@ -18,7 +19,7 @@
       color: #ffffff;
       background-color: #c6c6c6;
       text-align: center;
-      border-radius: 0 0 5px 5px;
+      .borderradius(0,0,5,5);
     }
     .listtitle{
       .fs(24);
@@ -52,12 +53,10 @@
       }
     }
     .post2{
-      //.w(330);
       width: 100%;
       .h(210);
       position: relative;
       .post2-img{
-        //.w(320);
         width: 95%;
         .h(200);
         position: absolute;
@@ -66,7 +65,6 @@
         z-index: 100;
         overflow: hidden;
         img{
-          //.w(320);
           width: 100%;
           position: absolute;
           .left(0);
@@ -76,7 +74,8 @@
         //.w(320);
         width: 95%;
         .h(200);
-        border: 1px solid #ccc;
+        border:solid #ccc;
+        .borderwidth(1);
         box-sizing: border-box;
         position: absolute;
         .bottom(5);
@@ -85,10 +84,10 @@
         background-color: transparent;
       }
       .border2{
-        //.w(320);
         width: 95%;
         .h(200);
-        border: 1px solid #ccc;
+        border: solid #ccc;
+        .borderwidth(1);
         box-sizing: border-box;
         position: absolute;
         .bottom(10);

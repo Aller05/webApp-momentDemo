@@ -1,8 +1,0 @@
-node_modules/**
-.idea/**
-build/**
-dist/**
-gulpfile.js
-package.json
-.gitignore
-

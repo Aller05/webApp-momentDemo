@@ -22,6 +22,7 @@
                     window.history.back();
                     ele.find('img')[0].style.display='block';
                     ele.find('img')[1].style.display='none';
+                    window.scrollTo(0,0);
                 }
             }
 

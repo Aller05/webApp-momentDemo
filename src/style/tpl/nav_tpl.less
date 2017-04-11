@@ -1,5 +1,6 @@
 .nav{
   width:100%;
+  .h(50);
   .lh(50);
   background-color: #12d5b5;
   text-align: center;
@@ -8,13 +9,21 @@
   .left(0);
   position: fixed;
   z-index: 999;
-  img{
+  img:first-of-type{
     .w(30);
     .h(30);
-    .p(8);
+    .p(10);
     position: absolute;
-    .top(8);
+    .top(0);
     .left(0);
+  }
+  img:last-of-type{
+    .w(24);
+    .h(24);
+    .p(13);
+    position: absolute;
+    .top(0);
+    .left(-5);
   }
   span{
     width: 100%;

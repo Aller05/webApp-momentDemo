@@ -1,6 +1,19 @@
+//loading这个类的目的是,加载时添加,使页面隐藏到屏幕右侧,加载完成时取消类,使其有入场动画
+.loading{
+  -webkit-transform: translate(100%,0);
+  -moz-transform: translate(100%,0);
+  -ms-transform: translate(100%,0);
+  -o-transform: translate(100%,0);
+  transform: translate(100%,0);
+}
+.home-loading{
+  .mt(50);
+  text-align: center;
+}
 .homemain{
+  transition: all 0.8s;
   background-color: #f9f9f9;
-  .pt(80);
+  .pt(60);
   box-sizing: border-box;
   .mb(60);
   .list{
@@ -24,7 +37,6 @@
     .listtitle{
       .fs(24);
       .mt(15);
-      .mb(10);
       font-weight: 500;
     }
     .post1{

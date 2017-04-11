@@ -24,12 +24,7 @@
                     // controller:'homeController'
                 }
             }
-        });
-        $urlRouterProvider.otherwise('app');
-    }]);
-
-    angular.module('app').config(['$stateProvider',function ($stateProvider) {
-        $stateProvider.state('app.home',{
+        }).state('app.home',{
             url:'/home',
             template:'<homelist></homelist>'
             //10001 无图  10002有图有文字  10003有图无文字
@@ -40,12 +35,8 @@
                 $scope.listItem = $scope.homelist[$stateParams.index];
             }],
             template:'<detail></detail>'
-
         });
+        $urlRouterProvider.otherwise('app/home');
     }]);
-
     //home的路由不管怎么跳转,都在home视图内,所以都属于home控制器范围.
-
-
-
 })(angular);

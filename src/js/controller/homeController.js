@@ -8,7 +8,7 @@
         //定义用于反盗链的前缀地址
         $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
         var args = {
-            url:'http://localhost/api/home.php',
+            url:'http://192.168.34.248/api/home.php',
             method:'jsonp',
             params:null
         };

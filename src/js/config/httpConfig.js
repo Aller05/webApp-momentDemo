@@ -5,7 +5,7 @@
     angular.module('app').config(['$sceDelegateProvider',function ($sceDelegateProvider) {
         $sceDelegateProvider.resourceUrlWhitelist([
             'self',
-            'http://192.168.34.248/api/**'
+            'http://139.199.107.194:8088/**'
         ])
     }])
 })(angular);

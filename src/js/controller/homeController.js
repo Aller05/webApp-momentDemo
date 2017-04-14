@@ -5,6 +5,7 @@
     angular.module('app').controller('homeController',['$scope','$state','myHttp',function ($scope,$state,myHttp) {
         //程序刚启动时,使其处于加载状态
         $scope.isLoading = true;
+        $scope.isDetailCss = false;
         //定义用于反盗链的前缀地址
         $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
         var args = {

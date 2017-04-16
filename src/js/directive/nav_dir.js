@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    angular.module('app').directive('nav',['$location',function ($location) {
+    angular.module('app').directive('nav',['$location','$timeout','$state',function ($location,$timeout,$state) {
         return{
             restrict:'EA',
             templateUrl:'view/tpl/nav_tpl.html',
@@ -14,18 +14,17 @@
                 $scope.$location = $location;
                 $scope.$watch('$location.url()',function (newValue, oldValue) {
                     if( newValue != '/app/home'){
-                        console.log($scope.isDetailCss);
                         ele.find('img')[0].style.display='none';
                         ele.find('img')[1].style.display='block';
-                        $scope.isDetailCss = true;
-                        console.log($scope.isDetailCss);
                     }
                 });
                 $scope.goBack = function () {
                     window.history.back();
                     ele.find('img')[0].style.display='block';
                     ele.find('img')[1].style.display='none';
-                    $scope.isDetailCss = false;
+                    $timeout(function () {
+                        $scope.isDetailCss = true;
+                    },1);
                 }
             }
 

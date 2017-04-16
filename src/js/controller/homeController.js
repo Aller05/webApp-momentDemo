@@ -5,7 +5,15 @@
     angular.module('app').controller('homeController',['$scope','$state','myHttp',function ($scope,$state,myHttp) {
         //程序刚启动时,使其处于加载状态
         $scope.isLoading = true;
-        $scope.isDetailCss = false;
+        //程序刚启动时,详情页是否向右侧位移100%为真,就是默认隐藏在右侧.
+        $scope.isDetailCss = true;
+
+        $scope.$watch('$location.url()',function (newValue, oldValue) {
+            if( newValue != '/app/home'){
+                $scope.xxx = true;
+            }
+        });
+
         //定义用于反盗链的前缀地址
         $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
         var args = {

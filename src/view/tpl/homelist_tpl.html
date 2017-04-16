@@ -1,5 +1,5 @@
 <div ng-show="isLoading" class="home-loading"><img src="images/loading.gif" alt=""></div>
-<div class="homemain" ng-class="{loading:isLoading,detailCss:isDetailCss}">
+<div class="homemain" ng-class="{loading:isLoading}">
     <div class="list" ng-repeat="(key,list) in homelist" ui-sref="app.detail({index:key})"><!--当点击home列表内容时,跳转到详情页路由,参数为索引值-->
         <span ng-if="list.column.name != ''" class="smallTitle" ng-bind="list.column.name"></span>
         <p ng-bind="list.title" class="listtitle" ng-class="{onlyPicTitleMarginBottom:true}"></p>

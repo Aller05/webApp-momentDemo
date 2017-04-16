@@ -1,19 +1,21 @@
 .tabbar{
-  .lh(30);
-  background-color: #fff;
-  .left(0);
-  .right(0);
-  .bottom(0);
-  position: fixed;
+  display: inline-block;
+  height: 100%;
+  width: 60%;
+  background-color: #f2f2f2;
+  left: -60%;
+  .top(0);
+  position: absolute;
   z-index: 99999;
-  border-top: solid #ccc;
+  border-right: solid #e0e0e0;
   .borderwidth(1);
+  box-sizing: border-box;
+  box-shadow: -1px -5px 20px #c1c1c1 inset;
   ul{
     width: 100%;
     list-style: none;
     li{
-      width: 25%;
-      float: left;
+      width: 100%;
       text-align: center;
       img{
         .w(22);

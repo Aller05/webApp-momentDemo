@@ -1,6 +1,6 @@
-<div class="tabbar">
+<div id="tabbar"  ng-class="{tabbarIn:isNav}">
     <ul>
-        <li><img src="images/tabicon/my_icon.png" alt=""><span>登录</span></li>
+        <li ><img src="images/tabicon/my_icon.png" alt=""><span>登录</span></li>
         <li ng-click="click('今日一刻')"><img src="images/02.png" alt=""><span ng-class="{cur:title == '今日一刻'}">今日一刻</span></li>
         <li ng-click="click('往期内容')"><img src="images/03.png" alt=""><span ng-class="{cur:title == '往期内容'}">往期内容</span></li>
         <li ng-click="click('热门作者')"><img src="images/04.png" alt=""><span ng-class="{cur:title == '热门作者'}">热门作者</span></li>

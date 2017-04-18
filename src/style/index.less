@@ -10,18 +10,18 @@
 .onlyPicTitleMarginBottom{
   .mb(20)!important;
 }
+
 #mainContent{
   width: 100%;
   height: 100%;
-  //position: relative;
   transition:all 0.5s;
 }
 .navClickMainContent{
-  //position: fixed;
-  //.top(0);
-  -webkit-transform: translate(60%,0);
-  -moz-transform: translate(60%,0);
-  -ms-transform: translate(60%,0);
-  -o-transform: translate(60%,0);
-  transform: translate(60%,0);
+  z-index: -1;
+}
+#tabbar.tabbarIn{
+  left:0!important;
+}
+.noscroll{
+  overflow: hidden;
 }

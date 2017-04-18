@@ -11,10 +11,11 @@
 <!--下面是否添加的类,指的是当nav图标被点击时,是否添加那个类名(在index.less里)-->
 <div id="mainContent" ng-class="{navClickMainContent:isNav}">
     <!--<nav></nav>-->
-    <div ng-show="title == '今日一刻'" ui-view="home" ></div>
-    <div ng-show="title == '热门作者'" ui-view="author"></div>
-    <div ng-show="title == '栏目浏览'" ui-view="content"></div>
-    <div ng-show="title == '我喜欢的'" ui-view="my"></div>
+    <div  ng-show="title == '今日一刻'"  ui-view="home"></div>
+    <div  ng-show="title == '往期内容'"  ui-view="past"></div>
+    <div  ng-show="title == '热门作者'"  ui-view="author"></div>
+    <div  ng-show="title == '栏目浏览'"  ui-view="content"></div>
+    <div  ng-show="title == '我喜欢的'"  ui-view="my"></div>
 
 
     <tabbar></tabbar>

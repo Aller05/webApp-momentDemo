@@ -5,6 +5,7 @@
   background-color: #f2f2f2;
   left: -60%;
   .top(0);
+  .p(15);
   position: absolute;
   z-index: 99999;
   border-right: solid #e0e0e0;
@@ -14,18 +15,36 @@
   ul{
     width: 100%;
     list-style: none;
-    li{
-      width: 100%;
-      text-align: center;
+    li:first-of-type{
+      .h(32);
+      .pt(20);
+      .pb(20);
       img{
-        .w(22);
-        .h(22);
-        vertical-align: middle;
-        .mt(5);
+        .w(32);
+        .h(32);
       }
       span{
-        .fs(16);
-        display: block;
+        color: #a3a3a3;
+        .fs(14);
+        .pl(10);
+        .lh(32);
+      }
+    }
+    li{
+      width: 100%;
+      .h(25);
+      .pt(15);
+      .pb(15);
+      //background-color: lightblue;
+      img{
+        display: inline-block;
+        .w(25);
+        .h(25);
+        vertical-align: top;
+      }
+      span{
+        .fs(18);
+        .pl(15);
 
       }
     }

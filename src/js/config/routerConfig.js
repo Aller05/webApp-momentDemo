@@ -11,16 +11,20 @@
                     templateUrl:'view/home_tpl.html',
                     controller:'homeController'
                 },
-                author:{
-                    template:'author',
+                past:{
+                    // templateUrl:'view/home_tpl.html',
                     // controller:'homeController'
                 },
+                author:{
+/*                    templateUrl:'view/home_tpl.html',
+                    controller:'homeController'*/
+                },
                 content:{
-                    template:'content',
+                    // templateUrl:'view/home_tpl.html',
                     // controller:'homeController'
                 },
                 my:{
-                    template:'my',
+                    // templateUrl:'view/home_tpl.html',
                     // controller:'homeController'
                 }
             }

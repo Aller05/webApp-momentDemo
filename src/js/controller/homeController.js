@@ -15,7 +15,6 @@
             params:null
         };
         myHttp.getHttp(args,function (res) {
-            console.log(res);
             $scope.homelist = res.posts;
             //数据获取后,取消加载状态,即为加载完成
             $scope.isLoading = false;

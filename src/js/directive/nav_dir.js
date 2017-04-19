@@ -9,9 +9,7 @@
             link:function ($scope, ele, attr) {
                 //接收来自tabbar的广播,用于保存一级页面title名,用于从二级跳回到一级页面时更改nav的title
                 $scope.$on('calltitle',function (event, data) {
-                    console.log(data.title);
                     $scope.preTitleName = data.title;
-
                 });
                 //初始时,显示导航图标,隐藏返回图标
                 //监听锚点变化,当进入详情时,隐藏导航,显示返回

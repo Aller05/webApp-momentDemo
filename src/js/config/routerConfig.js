@@ -39,7 +39,6 @@
                 $scope.listItem = $scope.homelist[$stateParams.index];
             }],
             template:'<detail></detail>'
-
         }).state('app.author',{
             url:'/author',
             template:'<authorlist></authorlist>'
@@ -51,14 +50,13 @@
                 //loading动画,请求数据时显示动画
                 $scope.isLoading = true;
                 var args = {
-                    url:'http://127.0.0.1/api/author.php',
+                    url:'http://139.199.107.194:8088/moment/author.php',
                     method:'jsonp',
                     params:{//该id为作者的id编号,用于向服务器请求点击的作者详细数据
                         id:$scope.authrolist[$stateParams.index].uid
                     }
                 };
                 myHttp.getHttp(args,function (res) {
-                    console.log(res);
                     //该命名和home的list一样,因为复用了homelist指令,但是此时控制器归authorController,所以并不会冲突.
                     $scope.homelist = res.posts;
                     $scope.authormsg = res.author;

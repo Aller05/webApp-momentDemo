@@ -1,0 +1,15 @@
+
+<div class="author-list">
+    <div class="author-list-top">
+        <h2>热门作者</h2>
+    </div>
+    <ul>
+        <li ng-repeat="(key,list) in authrolist" ui-sref="app.authordetail({index:key})">
+            <img ng-src="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.avatar}}" >
+            <dl>
+                <dt ng-bind="list.name"></dt>
+                <dd ng-bind="list.editor_notes"></dd>
+            </dl>
+        </li>
+    </ul>
+</div>

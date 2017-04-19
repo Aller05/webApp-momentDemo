@@ -1,8 +1,13 @@
-<div ng-show="isLoading" class="home-loading"><img src="images/loading.gif" alt=""></div>
-<div class="homemain" ng-class="{loading:isLoading}">
+
+<div class="home-loading" ng-show="isLoading" >
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+</div>
+<!--<div ng-show="isLoading" class="home-loading"><img src="http://omj9dkm9p.bkt.clouddn.com/loading.gif" alt=""></div>-->
+<div class="homemain" ng-class="{loading:isLoading,authordetailstyle:authormsg}">
     <div class="list" ng-repeat="(key,list) in homelist" ui-sref="app.detail({index:key})"><!--当点击home列表内容时,跳转到详情页路由,参数为索引值-->
         <span ng-if="list.column.name != ''" class="smallTitle" ng-bind="list.column.name"></span>
-        <p ng-bind="list.title" class="listtitle" ng-class="{onlyPicTitleMarginBottom:true}"></p>
+        <p  ng-bind="list.title" class="listtitle" ></p>
         <div class="post1" ng-if="list.display_style == 10002">
             <p ng-bind="list.abstract"></p>
             <span style="background-image: url(http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl={{list.thumbs[0].small.url}})">

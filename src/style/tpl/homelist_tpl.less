@@ -46,7 +46,7 @@
     -o-animation-delay: -1.0s;
     animation-delay: -1.0s;
   }
-  @keyframes bounce {
+  @-webkit-keyframes bounce {
     0%, 100% {
       -webkit-transform: scale(0);
       -moz-transform: scale(0);
@@ -173,6 +173,36 @@
   }
 }
 .authordetailstyle{
+  .author-top{
+    .p(20);
+    text-align: center;
+    img{
+      .w(48);
+      border-radius: 50%;
+    }
+    h2{
+      .fs(24);
+      color: #000;
+    }
+    p{
+      color: #a2a2a2;
+      .pt(5);
+      .fs(14);
+    }
+    a{
+      color: #12d5b5;
+      display: inline-block;
+      .pt(5);
+      .pb(5);
+      .pl(10);
+      .pr(10);
+      border: solid #12d5b5;
+      .borderwidth(1);
+      .mt(20);
+      .mb(5);
+      .borderradius(5,5,5,5);
+    }
+  }
   .list{
     .listtitle{
       .fs(20);

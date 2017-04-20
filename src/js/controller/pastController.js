@@ -25,8 +25,5 @@
         },function (err) {
             console.log(err);
         });
-        // console.log($scope.homelist);
-
-
     }])
 })(angular);

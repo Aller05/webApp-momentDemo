@@ -2,8 +2,8 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    var app = angular.module('app',['ui.router']);
-    app.controller('appController',['$scope','$window',function ($scope,$window) {
+    var app = angular.module('app',['ui.router','ngTouch']);
+    app.controller('appController',['$scope','$location',function ($scope,$location) {
         //用于激活移动端a标签伪类效果
         document.body.addEventListener('touchstart', function () { });
         $scope.title = '今日一刻';
@@ -17,12 +17,8 @@
         $scope.$on('authortitle',function (event, data) {
             $scope.title = data.title+'的主页';
         });
-        //当导航按钮点击时,判断当前导航栏是存在还是不存在,存在就隐藏,隐藏就显示(通过添加类名实现).
-        $scope.nav = function () {
-            $scope.isNav = !$scope.isNav;
-            event.stopPropagation();
-
-            //监听窗口点击,当tabbar显示并且点击的id不是tabbar,则说明点击的要么是tarbar里的选项,要么就是右侧的内容页,那么就把导航隐藏掉,并且组织冒泡,防止内容页发生路由跳转
+        //监听窗口点击,当tabbar显示并且点击的id不是tabbar,则说明点击的要么是tarbar里的选项,要么就是右侧的内容页,那么就把导航隐藏掉,并且组织冒泡,防止内容页发生路由跳转
+        $scope.autoNav = function () {
             $scope.homeItem = document.getElementsByTagName('homelist');
             angular.forEach($scope.homeItem,function (data, index, array) {
                 data.addEventListener('click',function () {
@@ -33,6 +29,28 @@
                     }
                 },true)
             });
+        };
+
+        $scope.swipeRight = function () {
+            //当锚点包含defail时,说明在详情页,此时右滑相当于点击了后退箭头,所以给nav指令发广播
+            if($location.url().indexOf('detail') != '-1'){
+                $scope.$broadcast('swipeBack');
+            }else{//其他情况一律让导航跳出
+                $scope.isNav = !$scope.isNav;
+                $scope.autoNav();//导航显示后,调用该方法监听点击
+            }
+        };
+        //左滑动定义在body上,这样不管是在tabbar上还是详情页上左滑都可以起作用
+        $scope.swipeLeft = function () {
+            if($scope.isNav){//只有在导航显示的情况下才执行
+                $scope.isNav = !$scope.isNav;
+            }
+        };
+        //当导航按钮点击时,判断当前导航栏是存在还是不存在,存在就隐藏,隐藏就显示(通过添加类名实现).
+        $scope.nav = function () {
+            $scope.isNav = !$scope.isNav;
+            event.stopPropagation();
+            $scope.autoNav();//导航显示后,调用该方法监听点击
         };
     }])
 })(angular);

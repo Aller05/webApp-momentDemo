@@ -2,19 +2,17 @@
   transition:all 0.4s;
   display: inline-block;
   height: 100%;
-  width: 60%;
+  width: 55%;
   background-color: #f2f2f2;
-  left: -60%;
+  left: -55%;
   .top(0);
-  .p(15);
   position: fixed;
   z-index: 99999;
   border-right: solid #e0e0e0;
   .borderwidth(1);
-  box-sizing: border-box;
   box-shadow: -1px -5px 20px #c1c1c1 inset;
   ul{
-    width: 100%;
+    width: 85%;
     list-style: none;
     li:first-of-type{
       .h(32);
@@ -31,12 +29,13 @@
         .lh(32);
       }
     }
+    li:active{
+      background-color: #fff;
+    }
     li{
       width: 100%;
       .h(25);
-      .pt(15);
-      .pb(15);
-      //background-color: lightblue;
+      .p(15);
       img{
         display: inline-block;
         .w(25);
@@ -46,7 +45,6 @@
       span{
         .fs(18);
         .pl(15);
-
       }
     }
   }

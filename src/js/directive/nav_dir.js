@@ -34,7 +34,10 @@
                         $scope.title = $scope.preTitleName;
                     }
                     window.history.back();
-                }
+                };
+                $scope.$on('swipeBack',function () {
+                    $scope.goBack();
+                })
             }
         }
     }])

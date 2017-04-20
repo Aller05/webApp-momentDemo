@@ -30,12 +30,16 @@
             }
         }).state('app.home',{
             url:'/home',
+            controller:[function () {
+                window.scrollTo(0,0);
+            }],
             template:'<homelist></homelist>'
             //10001 无图  10002有图有文字  10003有图无文字
         }).state('app.past',{
             url:'/past',
-            // controller:'pastController',
-            // template:'<h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1>',
+            controller:[function () {
+                window.scrollTo(0,0);
+            }],
             template:'<homelist></homelist>'
         }).state('app.detail',{
             url:'/detail/:index',

@@ -12,8 +12,8 @@
                     controller:'homeController'
                 },
                 past:{
-                    // templateUrl:'view/home_tpl.html',
-                    // controller:'homeController'
+                    templateUrl:'view/past_tpl.html',
+                    controller:'pastController'
                 },
                 author:{
                     templateUrl:'view/author_tpl.html',
@@ -32,6 +32,11 @@
             url:'/home',
             template:'<homelist></homelist>'
             //10001 无图  10002有图有文字  10003有图无文字
+        }).state('app.past',{
+            url:'/past',
+            // controller:'pastController',
+            // template:'<h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1><h1>PAST</h1>',
+            template:'<homelist></homelist>'
         }).state('app.detail',{
             url:'/detail/:index',
             //根据参数的索引值,取出当前点击的为哪一个,获取详细内容

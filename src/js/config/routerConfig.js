@@ -76,13 +76,8 @@
             }],
             template:'<homelist></homelist>'
         });
-/*            .state('app.login',{
-            url:'/login',
-            template:'<login ng-class="{loginHidden:loginIn}"></login>'
-        });*/
 
-
-        $urlRouterProvider.otherwise('app/home');
+        $urlRouterProvider.otherwise('app/past');
     }]);
     //home的路由不管怎么跳转,都在home视图内,所以都属于home控制器范围.
 })(angular);

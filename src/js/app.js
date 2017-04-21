@@ -2,11 +2,11 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    var app = angular.module('app',['ui.router','ngTouch']);
+    var app = angular.module('app',['ui.router','ngTouch','infinite-scroll']);
     app.controller('appController',['$scope','$location',function ($scope,$location) {
         //用于激活移动端a标签伪类效果
         document.body.addEventListener('touchstart', function () { });
-        $scope.title = '今日一刻';
+        $scope.title = '往期内容';
         $scope.isNav = false;//记录是否点击了导航图标
         $scope.loginIn = false;//初始化时,登录框为隐藏状态
         $scope.click = function (type) {//导航栏点击时切换顶部文字

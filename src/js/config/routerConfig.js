@@ -77,7 +77,7 @@
             template:'<homelist></homelist>'
         });
 
-        $urlRouterProvider.otherwise('app/past');
+        $urlRouterProvider.otherwise('app/home');
     }]);
     //home的路由不管怎么跳转,都在home视图内,所以都属于home控制器范围.
 })(angular);

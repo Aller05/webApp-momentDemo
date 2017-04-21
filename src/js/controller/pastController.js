@@ -2,8 +2,9 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    angular.module('app').controller('pastController',['$scope','myHttp','$location',function ($scope,myHttp,$location) {
+    angular.module('app').controller('pastController',['$scope','myHttp','$location','$timeout',function ($scope,myHttp,$location,$timeout) {
         $scope.pastnow = true;
+        $scope.isLoading = true;
         //定义用于反盗链的前缀地址
         $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
         var num = 1,data = new Date();
@@ -36,11 +37,14 @@
 
         $scope.scrollaa = function () {
             //只有在past页面,并且上一次加载数据已经完成,才可以触发
-            if($location.url() == '/app/past' && !$scope.isLoading){
-                console.log(123);
-                num++;
-                $scope.pastData();
-            }
+            $timeout.cancel(timer);
+            var timer = $timeout(function () {//加定时器
+                if($location.url() == '/app/past' && !$scope.isLoading){
+                    console.log(123);
+                    num++;
+                    $scope.pastData();
+                }
+            },200);
         }
     }])
 })(angular);

@@ -21,6 +21,13 @@
                         ele.find('a')[0].style.display='none';
                         ele.find('a')[1].style.display='block';
                     }
+                    //下面两个判断用于辅助判断isLoading(在homelist模板上的)
+                    //当在past页面时,不添加isLoading类,不要首页的载入中效果
+                    else if(newValue == '/app/past'){
+                        $scope.helpLoading = false;
+                    }else{
+                        $scope.helpLoading = true;
+                    }
                 });
                 $scope.goBack = function () {
                     ele.find('a')[0].style.display='block';

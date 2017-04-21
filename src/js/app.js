@@ -6,7 +6,8 @@
     app.controller('appController',['$scope','$location',function ($scope,$location) {
         //用于激活移动端a标签伪类效果
         document.body.addEventListener('touchstart', function () { });
-        $scope.title = '往期内容';
+        $scope.$location = $location;
+        $scope.title = '今日一刻';
         $scope.isNav = false;//记录是否点击了导航图标
         $scope.loginIn = false;//初始化时,登录框为隐藏状态
         $scope.click = function (type) {//导航栏点击时切换顶部文字
@@ -53,5 +54,6 @@
             event.stopPropagation();
             $scope.autoNav();//导航显示后,调用该方法监听点击
         };
+
     }])
 })(angular);

@@ -1,10 +1,10 @@
 <div id="list_scroll">
-    <div class="home-loading" ng-show="isLoading" >
+    <div class="home-loading" ng-if="(isLoading && helpLoading)" >
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
     </div>
 
-    <div class="homemain" ng-class="{loading:isLoading,authordetailstyle:(authormsg||pastnow)}">
+    <div class="homemain" ng-class="{loading:(isLoading && helpLoading),authordetailstyle:(authormsg||pastnow)}">
         <div ng-if="authormsg" class="author-top">
             <img ng-src="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+authormsg.avatar}}" alt="">
             <h2 ng-bind="authormsg.name"></h2>
@@ -39,4 +39,9 @@
             </div>
         </div>
     </div>
+
+<!--    <div class="home-loading" ng-show="(isLoading && !pastnow)" >
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>-->
 </div>

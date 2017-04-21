@@ -75,10 +75,11 @@
                 });
             }],
             template:'<homelist></homelist>'
-        }).state('app.login',{
-            url:'/login',
-            template:'<login></login>'
         });
+/*            .state('app.login',{
+            url:'/login',
+            template:'<login ng-class="{loginHidden:loginIn}"></login>'
+        });*/
 
 
         $urlRouterProvider.otherwise('app/home');

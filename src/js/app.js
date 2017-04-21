@@ -8,6 +8,7 @@
         document.body.addEventListener('touchstart', function () { });
         $scope.title = '今日一刻';
         $scope.isNav = false;//记录是否点击了导航图标
+        $scope.loginIn = false;//初始化时,登录框为隐藏状态
         $scope.click = function (type) {//导航栏点击时切换顶部文字
             $scope.title = type;
             $scope.isNav = !$scope.isNav;

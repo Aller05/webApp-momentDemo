@@ -17,8 +17,7 @@
                 ele.find('a')[1].style.display='none';
                 $scope.$location = $location;
                 $scope.$watch('$location.url()',function (newValue, oldValue) {
-                    // console.log(newValue, oldValue);
-                    if( newValue != '/app/home' && newValue != '/app/author' && newValue != '/app/past'){
+                    if(newValue.indexOf('detail') != '-1'){
                         ele.find('a')[0].style.display='none';
                         ele.find('a')[1].style.display='block';
                     }

@@ -75,6 +75,9 @@
                 });
             }],
             template:'<homelist></homelist>'
+        }).state('app.login',{
+            url:'/login',
+            template:'<login></login>'
         });
 
 

@@ -20,7 +20,8 @@
                 }
             };
             myHttp.getHttp(args,function (res) {
-                res.posts[0].topdata = res.date;
+                res.posts[0].topdate = res.date;
+                res.posts[0].isPast = true;
                 for (var i = 0; i < res.posts.length; i++) {
                     $scope.homelist.push(res.posts[i])
                 }
@@ -46,6 +47,25 @@
                     $scope.pastData();
                 }
             },40);
-        }
+        };
+
+        $scope.flag = true;
+        $(window).scroll(function () {
+            if($scope.flag){
+                $scope.flag = false;
+                $timeout(function () {
+                    $('.isPastNow').each(function () {
+                        if( ($(window).scrollTop()+175) >= $(this).parent().offset().top ){
+                            $(this).addClass('pastListDate');
+                         }else{
+                            $(this).removeClass('pastListDate');
+                        }
+                    });
+                    $scope.flag = true;
+                },50)
+            }
+
+        })
+
     }])
 })(angular);

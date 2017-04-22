@@ -13,13 +13,13 @@
 <!--下面是否添加的类,指的是当nav图标被点击时,是否添加那个类名(在index.less里)-->
 <nav></nav>
 <div id="mainContent" ng-swipe-right="swipeRight()">
-    <div ng-show="title == '今日一刻'"  ui-view="home"></div>
+    <!--<div ng-show="title == '今日一刻'"  ui-view="home"></div>-->
     <div ng-show="title == '往期内容'"  ui-view="past"
          infinite-scroll='scrollaa()'
          infinite-scroll-distance='0'
          infinite-scroll-immediate-check= 'false'
     ></div>
-    <div  ng-show="title == '热门作者' || title.indexOf('的') != -1"  ui-view="author"></div>
+    <!--<div  ng-show="title == '热门作者' || title.indexOf('的') != -1"  ui-view="author"></div>-->
     <div  ng-show="title == '栏目浏览'"  ui-view="content"></div>
     <div  ng-show="title == '我喜欢的'"  ui-view="my"></div>
 </div>

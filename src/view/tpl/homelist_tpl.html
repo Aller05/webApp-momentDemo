@@ -19,8 +19,12 @@
         <div class="list"
              ng-repeat="(key,list) in homelist"
              ng-click="toDetail()"
+             ng-class="{isTopList:list.topdate}"
              ui-sref="app.detail({index:key})">
 
+            <div ng-class="{listDate:list.topdate, isPastNow:list.isPast}"
+                 ng-if="list.topdate"
+                 ng-bind="list.topdate"></div>
 
             <span class="smallTitle"
                   ng-if="list.column.name"

@@ -11,6 +11,10 @@
                 $scope.$on('calltitle',function (event, data) {
                     $scope.preTitleName = data.title;
                 });
+                //接收来自appCon的广播,保存进入详情页之前滚动偏移量
+                $scope.$on('preScroll',function (event,data) {
+                    $scope.scrollToY = data;
+                });
                 //初始时,显示导航图标,隐藏返回图标
                 //监听锚点变化,当进入详情时,隐藏导航,显示返回
                 //返回图标点击时,历史回退,导航显示,返回隐藏
@@ -40,10 +44,13 @@
                         $scope.title = $scope.preTitleName;
                     }
                     window.history.back();
+                    //将页面滚动到进入详情页之前的位置
+                    $('body').animate({scrollTop:$scope.scrollToY},15);
                 };
                 $scope.$on('swipeBack',function () {
                     $scope.goBack();
-                })
+                });
+
             }
         }
     }])

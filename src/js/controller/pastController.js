@@ -3,13 +3,12 @@
  */
 ;(function (angular) {
     angular.module('app').controller('pastController',['$scope','myHttp','$location','$timeout',function ($scope,myHttp,$location,$timeout) {
-        $scope.pastnow = true;
+        $scope.pastnow = true;//当前在past页面状态为真
         $scope.isLoading = true;
         //定义用于反盗链的前缀地址
         $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
         var num = 1,data = new Date();
-        $scope.homelist = [];
-
+        $scope.homelist = [];//定义空数组用来存放数据
         $scope.pastData = function () {
             $scope.isLoading = true;
             var day = data.getFullYear()+'-'+(data.getMonth()+1)+'-'+(data.getDate()-num);
@@ -34,17 +33,19 @@
         };
         $scope.pastData();//第一次启动程序时调用获取初始数据
 
-
+        //past页面滚动加载更多数据
         $scope.scrollaa = function () {
-            //只有在past页面,并且上一次加载数据已经完成,才可以触发
+            if($scope.isLoading){//如果状态为加载中,直接跳出
+                return
+            }
             $timeout.cancel(timer);
-            var timer = $timeout(function () {//加定时器
+            var timer = $timeout(function () {
+                //加定时器防止从past到其他页面跳转的瞬间发生滚动触发事件
                 if($location.url() == '/app/past' && !$scope.isLoading){
-                    console.log(123);
                     num++;
                     $scope.pastData();
                 }
-            },200);
+            },40);
         }
     }])
 })(angular);

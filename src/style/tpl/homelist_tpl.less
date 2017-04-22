@@ -6,15 +6,11 @@
   -o-transform: translate(100%,0);
   transform: translate(100%,0);
 }
-/*.home-loading{
-  .mt(50);
-  width: 100%;
-  text-align: center;
-  img{
-    width: 70%;
-  }
-}*/
-
+//全局背景色
+#list_scroll{
+  //background-color: #f8f8f8;
+}
+//-B加载动画
 .home-loading{
   .w(90);
   .h(90);
@@ -23,6 +19,7 @@
   left: 50%;
   .mt(-30);
   .ml(-45);
+  //background-color: #f8f8f8;
   .double-bounce1, .double-bounce2{
     width: 100%;
     height: 100%;
@@ -62,11 +59,32 @@
       }
   }
 }
+//-E加载动画
 
+//-B往期内容加载数据时的加载动画效果,有区别则覆盖重写
+.data-loading{
+  width: 100%;
+  .h(300);
+  //background-color: #f8f8f8;
+  position: relative;
+  .top(0);
+  .left(0);
+  .m(0);
+  .double-bounce1, .double-bounce2{
+    .w(90);
+    .h(90);
+    top: 50%;
+    left: 50%;
+    .mt(-45);
+    .ml(-45);
+  }
+}
+//-E往期内容加载数据时的加载动画效果,有区别则覆盖重写
+
+//-B主体样式
 .homemain{
   transition: all 0.5s;
-  background-color: #f8f8f8;
-  .pt(60);
+  .pt(50);
   box-sizing: border-box;
   .list{
     height: auto;
@@ -170,6 +188,32 @@
     }
   }
 }
+//-E主体样式
+
+//-B今日一刻底部前往往期内容
+.go-past{
+  .p(20);
+  .pt(5);
+  box-sizing: border-box;
+  a{
+    display: block;
+    text-decoration: none;
+    .lh(50);
+    text-align: center;
+    color: #fff;
+    background-color: #12d5b5;
+    .borderradius(5,5,5,5);
+    .fs(19);
+  }
+  a:active{
+    background-color: #11af92;
+    text-decoration: none;
+  }
+
+}
+//-E前往往期内容
+
+//-B在作者主页和往期内容页面时使用的样式,有区别就重写覆盖
 .authordetailstyle{
   .author-top{
     .p(20);
@@ -252,3 +296,4 @@
     }
   }
 }
+//-E在作者主页和往期内容页面时使用的样式,有区别就重写覆盖

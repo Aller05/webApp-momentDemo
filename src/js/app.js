@@ -3,7 +3,7 @@
  */
 ;(function (angular) {
     var app = angular.module('app',['ui.router','ngTouch','infinite-scroll']);
-    app.controller('appController',['$scope','$location',function ($scope,$location) {
+    app.controller('appController',['$scope','$location','$state',function ($scope,$location,$state) {
         //用于激活移动端a标签伪类效果
         document.body.addEventListener('touchstart', function () { });
         $scope.$location = $location;
@@ -54,6 +54,15 @@
             event.stopPropagation();
             $scope.autoNav();//导航显示后,调用该方法监听点击
         };
+        //今日一刻页面底部的跳转按钮
+        $scope.goPast = function () {
+            $scope.title = '往期内容';
+        };
+        //当点击列表进入详情页时,保存进入前的滚动偏移量,并向nav_dir指令发送广播
+        $scope.toDetail = function () {
+            $scope.$broadcast('preScroll',$('body').scrollTop());
+
+        }
 
     }])
 })(angular);

@@ -42,6 +42,7 @@
                 $scope.deleteLike = function () {
                     $scope.isInLike = false;
                     $scope.iLike.splice($scope.theLikeIndex,1);
+                    $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
                 };
 
                 //初始时,显示导航图标,隐藏返回图标

@@ -9,11 +9,11 @@
             views:{
                 home:{
                     templateUrl:'view/home_tpl.html',
-                    controller:'homeController'
+                    // controller:'homeController'
                 },
                 past:{
                     templateUrl:'view/past_tpl.html',
-                    controller:'pastController'
+                    // controller:'pastController'
                 },
                 author:{
                     templateUrl:'view/author_tpl.html',
@@ -77,7 +77,7 @@
             template:'<homelist></homelist>'
         });
 
-        $urlRouterProvider.otherwise('app/past');
+        $urlRouterProvider.otherwise('app/home');
     }]);
     //home的路由不管怎么跳转,都在home视图内,所以都属于home控制器范围.
 })(angular);

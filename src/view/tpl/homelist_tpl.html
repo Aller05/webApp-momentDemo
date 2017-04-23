@@ -23,8 +23,7 @@
              ui-sref="app.detail({index:key})">
 
             <div ng-class="{listDate:list.topdate, isPastNow:list.isPast}"
-                 ng-if="list.topdate"
-                 ng-bind="list.topdate"></div>
+                 ng-if="list.topdate">{{list.topdate | date:'dd MMM'}}</div>
 
             <span class="smallTitle"
                   ng-if="list.column.name"

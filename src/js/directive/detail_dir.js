@@ -13,7 +13,7 @@
                 //进入详情页时,添加定时器,等详情页已加载并将homelist替换后,过一定时间再去除位移类,就会有从右侧出现的动画效果.
                 $timeout(function () {
                     $scope.isDetailCss = false;
-                },1);
+                },20);
                 //1.将获取到的html片段注入到指令内
                 ele.html($scope.listItem.content);
                 //2.获取所有的img标签

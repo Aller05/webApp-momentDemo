@@ -48,7 +48,7 @@
                 }
             },40);
         };
-
+        //控制往期内容的时间标题
         $scope.flag = true;
         $(window).scroll(function () {
             if($scope.flag){

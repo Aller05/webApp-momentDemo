@@ -77,7 +77,10 @@
             template:'<homelist></homelist>'
         }).state('app.iLike',{
             url:'/iLike',
-            template:'<homelist></homelist>'
+            template:'<homelist></homelist>',
+            controller:[function () {
+                window.scrollTo(0,0);
+            }]
         });
 
         $urlRouterProvider.otherwise('app/home');

@@ -35,6 +35,8 @@
                 $scope.saveLike = function () {
                     $scope.isInLike = true;
                     $scope.iLike.push($scope.detailObj);
+                    //列表中第一个添加数量标题
+                    $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
                 };
                 //点击红色心,取消收藏,然后显示白色心
                 $scope.deleteLike = function () {

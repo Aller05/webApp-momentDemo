@@ -1,4 +1,4 @@
-<div id="list_scroll">
+<div id="list_scroll" ng-class="{onLikemarginTop:isLikeNow}">
     <!--今日一刻和热门作者详情加载中等待动画-->
     <div class="home-loading" ng-show="(isLoading && helpLoading)" >
         <div class="double-bounce1"></div>
@@ -19,11 +19,14 @@
         <div class="list"
              ng-repeat="(key,list) in homelist"
              ng-click="toDetail(list)"
-             ng-class="{isTopList:list.topdate}"
+             ng-class="{isTopList:(list.topdate&&!isLikeNow)}"
              ui-sref="app.detail({index:key})">
-
+            <!--悬浮日期标题,正常显示第一个,我喜欢的视图显示第二个-->
             <div ng-class="{listDate:list.topdate, isPastNow:list.isPast}"
-                 ng-if="list.topdate">{{list.topdate | date:'dd MMM'}}</div>
+                 ng-if="(list.topdate && !isLikeNow)">{{list.topdate| date:'dd MMM'}}</div>
+            <div class="listDate"
+                 ng-if="isLikeNow && list.likeNum"
+                 ng-bind="list.likeNum" ></div>
 
             <span class="smallTitle"
                   ng-if="list.column.name"

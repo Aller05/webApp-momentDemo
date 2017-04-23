@@ -66,8 +66,21 @@
                 scrollNum:$('body').scrollTop(),
                 detailObj:obj
             });
+        };
 
-        }
+
+        $scope.$location = $location;
+        $scope.$watch('$location.url()',function (newValue,oldValue) {
+            if(newValue == '/app/iLike'){
+                $scope.isLikeNow = true;
+                $scope.onLikemarginTop = {
+
+                }
+            }else{
+                $scope.isLikeNow = false;
+            }
+            console.log($scope.isLikeNow);
+        });
 
     }])
 })(angular);

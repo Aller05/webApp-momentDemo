@@ -28,7 +28,6 @@
       .pl(10);
       .pr(10);
       background-color: #ececec;
-
     }
     >p{
       .fs(32);
@@ -37,13 +36,19 @@
       .pb(15);
     }
     .info{
-      img{
-        width: 12%;
-        border-radius: 50%;
-        vertical-align: middle;
+      .pb(15);
+      box-sizing: border-box;
+      >a{
+        width: 100%;
+        img{
+          .w(40);
+          .h(40);
+          border-radius: 50%;
+          vertical-align: middle;
+        }
       }
       p{
-        display: inline-block;
+        display: inline;
         letter-spacing: 1px;
         .fs(16);
         color: #999;

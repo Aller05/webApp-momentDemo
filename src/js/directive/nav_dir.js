@@ -37,7 +37,7 @@
                     $scope.isInLike = true;
                     //收藏数+1
                     $scope.detailObj.like_count++;
-                    $scope.iLike.push($scope.detailObj);
+                    $scope.iLike.unshift($scope.detailObj);
                 };
                 //点击红色心,取消收藏,然后显示白色心
                 $scope.deleteLike = function () {
@@ -91,10 +91,6 @@
                 $scope.$on('swipeBack',function () {
                     $scope.goBack();
                 });
-
-
-
-
             }
         }
     }])

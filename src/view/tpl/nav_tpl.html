@@ -8,7 +8,13 @@
     </a>
     <span ng-bind="title"></span>
     <a >
-        <img src="images/whiteheart.png" ng-show="!isInLike" ng-click="saveLike()">
-        <img src="images/redheart.png" ng-show="isInLike" ng-click="deleteLike()">
+        <img src="images/whiteheart.png"
+             ng-show="!isInLike"
+             ng-click="saveLike()">
+
+        <img src="images/redheart.png"
+             ng-show="isInLike"
+             ng-click="deleteLike()">
+        <span ng-bind="detailObj.like_count"></span>
     </a>
 </div>

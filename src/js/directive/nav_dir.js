@@ -15,6 +15,7 @@
                 $scope.$on('preScroll',function (event,data) {
                     $scope.scrollToY = data.scrollNum;
                     $scope.detailObj = data.detailObj;
+                    console.log($scope.detailObj);
                     //当我喜欢的列表为空时,显示白色心
                     if($scope.iLike.length == 0){
                         $scope.isInLike = false;
@@ -34,15 +35,16 @@
                 //点击白色心,添加到收藏列表,并显示红色心
                 $scope.saveLike = function () {
                     $scope.isInLike = true;
+                    //收藏数+1
+                    $scope.detailObj.like_count++;
                     $scope.iLike.push($scope.detailObj);
-                    //列表中第一个添加数量标题
-                    $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
                 };
                 //点击红色心,取消收藏,然后显示白色心
                 $scope.deleteLike = function () {
                     $scope.isInLike = false;
+                    //收藏数-1
+                    $scope.detailObj.like_count--;
                     $scope.iLike.splice($scope.theLikeIndex,1);
-                    $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
                 };
 
                 //初始时,显示导航图标,隐藏返回图标
@@ -83,6 +85,8 @@
                     window.history.back();
                     //将页面滚动到进入详情页之前的位置
                     $('body').animate({scrollTop:$scope.scrollToY},15);
+                    //我喜欢的列表中第一个添加数量标题
+                    $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
                 };
                 $scope.$on('swipeBack',function () {
                     $scope.goBack();

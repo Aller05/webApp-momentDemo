@@ -68,18 +68,14 @@
             });
         };
 
-
+        //监听锚点变化,当在'我喜欢的'页面时,修改状态
         $scope.$location = $location;
         $scope.$watch('$location.url()',function (newValue,oldValue) {
             if(newValue == '/app/iLike'){
                 $scope.isLikeNow = true;
-                $scope.onLikemarginTop = {
-
-                }
             }else{
                 $scope.isLikeNow = false;
             }
-            console.log($scope.isLikeNow);
         });
 
     }])

@@ -31,11 +31,15 @@
       .p(13);
     }
   }
-  a:active{
+  a:nth-of-type(2):active{
     border-radius: 50%;
     background-color: rgb(22, 239, 192);
   }
-  span{
+  a:nth-of-type(2):active{
+    border-radius: 50%;
+    background-color: rgb(22, 239, 192);
+  }
+  >span{
     width: 100%;
     .fs(20);
     .mb(10);
@@ -43,17 +47,22 @@
   }
   a:nth-of-type(3){
     transition: all 0.5s;
-    width: 13%;
+    width: 16%;
     .top(0);
-    .right(0);
+    .right(5);
     img{
-      //transition: all 0.5s;
-      .w(34);
-      .h(36);
+      .w(30);
+      .h(32);
       position: absolute;
       .top(0);
       .left(0);
-      .p(7);
+      .p(9);
+    }
+    span{
+      position: absolute;
+      .top(-8);
+      .left(40);
+      .fs(13);
     }
   }
 }

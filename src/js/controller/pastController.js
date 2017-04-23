@@ -25,7 +25,6 @@
                 for (var i = 0; i < res.posts.length; i++) {
                     $scope.homelist.push(res.posts[i])
                 }
-                console.log($scope.homelist);
                 //数据获取后,取消加载状态,即为加载完成
                 $scope.isLoading = false;
             },function (err) {

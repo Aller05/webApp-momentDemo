@@ -18,7 +18,7 @@
         <!--循环遍历的列表项-->
         <div class="list"
              ng-repeat="(key,list) in homelist"
-             ng-click="toDetail()"
+             ng-click="toDetail(list)"
              ng-class="{isTopList:list.topdate}"
              ui-sref="app.detail({index:key})">
 

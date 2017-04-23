@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    angular.module('app').controller('homeController',['$scope','myHttp',function ($scope,myHttp) {
+    angular.module('app').controller('homeController',['$scope','myHttp','$stateParams',function ($scope,myHttp,$stateParams) {
         //用于在homelist模板中辅助判断列表样式是大视图还是小视图
         $scope.pastnow = false;
         //程序刚启动时,使其处于加载状态

@@ -5,7 +5,7 @@
     angular.module('app').directive('detail',['$timeout','$window',function ($timeout,$window) {
         return{
             restrict:'EA',
-            template:'<div id="detail-content"  ng-class="{detailCss:isDetailCss}" ></div>',//添加id是为了给获取到的详情页加样式不冲突
+            template:'<div id="detail-content"  ng-class="{detailCss:isDetailCss}" ></div>',
             link:function ($scope, ele, attr) {
 /*总思路:因为获取到的详情内有图片,但是没有图片地址,每个详情页的图片第一个和最后一个都是作者头像,中间的图片与json数据内photo的数据一致,而且顺序也一致,所以有了以下逻辑*/
                 //0.一进入详情页,就将整个页面滚动到顶部

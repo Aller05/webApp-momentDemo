@@ -7,7 +7,6 @@
             restrict:'EA',
             templateUrl:'view/tpl/homelist_tpl.html',
             link:function ($scope,ele,attr) {
-
             }
         }
     })

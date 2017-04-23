@@ -9,11 +9,11 @@
             views:{
                 home:{
                     templateUrl:'view/home_tpl.html',
-                    // controller:'homeController'
+                    controller:'homeController'
                 },
                 past:{
                     templateUrl:'view/past_tpl.html',
-                    // controller:'pastController'
+                    controller:'pastController'
                 },
                 author:{
                     templateUrl:'view/author_tpl.html',
@@ -24,16 +24,16 @@
                     // controller:'homeController'
                 },
                 my:{
-                    // templateUrl:'view/home_tpl.html',
-                    // controller:'homeController'
+                    templateUrl:'view/iLike_tpl.html',
+                    controller:'iLikeController'
                 }
             }
         }).state('app.home',{
             url:'/home',
+            template:'<homelist></homelist>',
             controller:[function () {
                 window.scrollTo(0,0);
             }],
-            template:'<homelist></homelist>'
             //10001 无图  10002有图有文字  10003有图无文字
         }).state('app.past',{
             url:'/past',
@@ -43,11 +43,11 @@
             template:'<homelist></homelist>'
         }).state('app.detail',{
             url:'/detail/:index',
+            template:'<detail></detail>',
             //根据参数的索引值,取出当前点击的为哪一个,获取详细内容
             controller:['$scope','$stateParams',function ($scope, $stateParams) {
                 $scope.listItem = $scope.homelist[$stateParams.index];
             }],
-            template:'<detail></detail>'
         }).state('app.author',{
             url:'/author',
             template:'<authorlist></authorlist>'
@@ -64,7 +64,7 @@
                     params:{//该id为作者的id编号,用于向服务器请求点击的作者详细数据
                         id:$scope.authrolist[$stateParams.index].uid
                     }
-                };
+                }
                 myHttp.getHttp(args,function (res) {
                     //该命名和home的list一样,因为复用了homelist指令,但是此时控制器归authorController,所以并不会冲突.
                     $scope.homelist = res.posts;
@@ -74,6 +74,9 @@
                     console.log(err);
                 });
             }],
+            template:'<homelist></homelist>'
+        }).state('app.iLike',{
+            url:'/iLike',
             template:'<homelist></homelist>'
         });
 

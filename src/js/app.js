@@ -10,6 +10,7 @@
         $scope.title = '今日一刻';
         $scope.isNav = false;//记录是否点击了导航图标
         $scope.loginIn = false;//初始化时,登录框为隐藏状态
+        $scope.iLike = [];//我喜欢的视图数据对象数组,初始化为0;
         $scope.click = function (type) {//导航栏点击时切换顶部文字
             $scope.title = type;
             $scope.isNav = !$scope.isNav;
@@ -58,9 +59,13 @@
         $scope.goPast = function () {
             $scope.title = '往期内容';
         };
-        //当点击列表进入详情页时,保存进入前的滚动偏移量,并向nav_dir指令发送广播
-        $scope.toDetail = function () {
-            $scope.$broadcast('preScroll',$('body').scrollTop());
+        //当点击列表进入详情页时,并向nav_dir指令发送广播
+        //传送进入前的滚动偏移量,以及当前详情对象
+        $scope.toDetail = function (obj) {
+            $scope.$broadcast('preScroll',{
+                scrollNum:$('body').scrollTop(),
+                detailObj:obj
+            });
 
         }
 

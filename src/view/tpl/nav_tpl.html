@@ -7,4 +7,8 @@
         <img src="images/goback.png">
     </a>
     <span ng-bind="title"></span>
+    <a >
+        <img src="images/whiteheart.png" ng-show="!isInLike" ng-click="saveLike()">
+        <img src="images/redheart.png" ng-show="isInLike" ng-click="deleteLike()">
+    </a>
 </div>

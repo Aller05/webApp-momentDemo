@@ -15,7 +15,6 @@
                 $scope.$on('preScroll',function (event,data) {
                     $scope.scrollToY = data.scrollNum;
                     $scope.detailObj = data.detailObj;
-                    console.log($scope.detailObj);
                     //当我喜欢的列表为空时,显示白色心
                     if($scope.iLike.length == 0){
                         $scope.isInLike = false;
@@ -86,7 +85,9 @@
                     //将页面滚动到进入详情页之前的位置
                     $('body').animate({scrollTop:$scope.scrollToY},15);
                     //我喜欢的列表中第一个添加数量标题
-                    $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
+                    if($scope.iLike.length>0){
+                        $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
+                    }
                 };
                 $scope.$on('swipeBack',function () {
                     $scope.goBack();

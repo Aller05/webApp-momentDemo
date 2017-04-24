@@ -20,13 +20,13 @@
                 var allImg = ele.find('img');
                 for (var i = 1; i < allImg.length-1; i++) {
                     //3.遍历时避开第一个和最后一个,拼接url地址
-                    var url = $scope.fangdaolian+$scope.listItem.photos[i-1].small.url;
+                    var url = $scope.listItem.photos[i-1].small.url;
                     //4.设置内容图片src属性
                     allImg[i].setAttribute('src',url);
                 }
                 //5.设置第一个和最后一个作者头像图片
-                allImg[0].setAttribute('src',$scope.fangdaolian+$scope.listItem.author.avatar);
-                allImg[allImg.length-1].setAttribute('src',$scope.fangdaolian+$scope.listItem.author.avatar);
+                allImg[0].setAttribute('src',$scope.listItem.author.avatar);
+                allImg[allImg.length-1].setAttribute('src',$scope.listItem.author.avatar);
             },
             replace:true
         }

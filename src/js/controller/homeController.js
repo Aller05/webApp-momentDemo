@@ -9,8 +9,6 @@
         $scope.isLoading = true;
         //程序刚启动时,详情页是否向右侧位移100%为真,就是默认隐藏在右侧.
         $scope.isDetailCss = true;
-        //定义用于反盗链的前缀地址
-        $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
         var args = {
             url:'http://139.199.107.194:8088/moment/homelist.php',
             method:'jsonp',
@@ -21,6 +19,7 @@
             $scope.homelist = res.posts;
             //数据获取后,取消加载状态,即为加载完成
             $scope.isLoading = false;
+            //获取到数据后向懒加载插件内发送刷新广播,为了修复第一次打开页面不滚动图片
             $timeout(function(){ $rootScope.$emit('lazyImg:refresh'); },1000);
         },function (err) {
             console.log(err);

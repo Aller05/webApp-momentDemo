@@ -10,7 +10,7 @@
          ng-class="{loading:(isLoading && helpLoading),authordetailstyle:(authormsg||pastnow||isLikeNow)}">
         <!--作者简介,当在作者主页时显示-->
         <div ng-if="authormsg" class="author-top">
-            <img lazy-img="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+authormsg.avatar}}">
+            <img ng-src="{{ authormsg.avatar}}">
             <h2 ng-bind="authormsg.name"></h2>
             <p ng-bind="authormsg.resume"></p>
             <a ng-href="{{authormsg.url}}">去豆瓣主页</a>
@@ -20,7 +20,7 @@
              ng-repeat="(key,list) in homelist"
              ng-click="toDetail(list)"
              ng-class="{isTopList:(list.topdate&&!isLikeNow)}"
-             ui-sref="app.detail({index:key})">
+             ui-sref="app.detail">
             <!--悬浮日期标题,正常显示第一个,我喜欢的视图显示第二个-->
             <div ng-class="{listDate:list.topdate, isPastNow:list.isPast}"
                  ng-if="(list.topdate && !isLikeNow)">{{list.topdate| date:'dd MMM'}}</div>
@@ -36,7 +36,7 @@
             <!--单张图片有文字的样式-->
             <div class="post1" ng-if="list.display_style == 10002">
                 <p ng-bind="list.abstract"></p>
-                <span lazy-img="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}">
+                <span lazy-img="{{ list.thumbs[0].small.url}}">
             </span>
             </div>
             <!--纯图片无文字的样式-->
@@ -46,16 +46,16 @@
                     <div class="border1">
                         <div class="border2">
                             <div class="post2Img" ng-class="{post2imgtoohigh:(list.thumbs[0].small.height>350)}">
-                                <img lazy-img="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}" style="top:{{-list.thumbs[0].small.height/2+100+'px'}}">
+                                <img lazy-img="{{ list.thumbs[0].small.url}}" style="top:{{-list.thumbs[0].small.height/2+100+'px'}}">
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--在往期内容和作者主页加载的页面效果,只显示三张小图片-->
                 <div ng-if="authormsg||pastnow||isLikeNow">
-                    <img lazy-img="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[0].small.url}}"    style="top:{{-list.thumbs[0].small.height/2+100+'px'}}">
-                    <img lazy-img="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[1].small.url}}"    style="top:{{-list.thumbs[1].small.height/2+100+'px'}}">
-                    <img lazy-img="{{'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl='+list.thumbs[2].small.url}}"    style="top:{{-list.thumbs[2].small.height/2+100+'px'}}">
+                    <img lazy-img="{{ list.thumbs[0].small.url}}"    style="top:{{-list.thumbs[0].small.height/2+100+'px'}}">
+                    <img lazy-img="{{ list.thumbs[1].small.url}}"    style="top:{{-list.thumbs[1].small.height/2+100+'px'}}">
+                    <img lazy-img="{{ list.thumbs[2].small.url}}"    style="top:{{-list.thumbs[2].small.height/2+100+'px'}}">
                 </div>
             </div>
             <!--纯文字无图片的样式-->

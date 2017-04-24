@@ -43,38 +43,13 @@
             }],
             template:'<homelist></homelist>'
         }).state('app.detail',{
-            url:'/detail/:index',
+            url:'/detail',
             template:'<detail></detail>',
-            //根据参数的索引值,取出当前点击的为哪一个,获取详细内容
-            controller:['$scope','$stateParams',function ($scope, $stateParams) {
-                $scope.listItem = $scope.homelist[$stateParams.index];
-            }],
         }).state('app.author',{
             url:'/author',
             template:'<authorlist></authorlist>'
         }).state('app.authordetail',{
-            url:'/authordetail/:index',
-            controller:['$scope','$stateParams','myHttp',function ($scope,$stateParams,myHttp) {
-                //向app主控制器发广播,传送作者名字,修改nav的title
-                $scope.$emit('authortitle',{title:$scope.authrolist[$stateParams.index].name});
-                //loading动画,请求数据时显示动画
-                $scope.isLoading = true;
-                var args = {
-                    url:'http://139.199.107.194:8088/moment/author.php',
-                    method:'jsonp',
-                    params:{//该id为作者的id编号,用于向服务器请求点击的作者详细数据
-                        id:$scope.authrolist[$stateParams.index].uid
-                    }
-                }
-                myHttp.getHttp(args,function (res) {
-                    //该命名和home的list一样,因为复用了homelist指令,但是此时控制器归authorController,所以并不会冲突.
-                    $scope.homelist = res.posts;
-                    $scope.authormsg = res.author;
-                    $scope.isLoading = false;//请求完数据隐藏
-                },function (err) {
-                    console.log(err);
-                });
-            }],
+            url:'/authordetail',
             template:'<homelist></homelist>'
         }).state('app.iLike',{
             url:'/iLike',

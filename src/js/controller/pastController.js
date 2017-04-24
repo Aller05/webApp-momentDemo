@@ -5,8 +5,6 @@
     angular.module('app').controller('pastController',['$scope','myHttp','$location','$timeout',function ($scope,myHttp,$location,$timeout) {
         $scope.pastnow = true;//当前在past页面状态为真
         $scope.isLoading = true;
-        //定义用于反盗链的前缀地址
-        $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
         var num = 1,data = new Date();
         $scope.homelist = [];//定义空数组用来存放数据
         $scope.pastData = function () {

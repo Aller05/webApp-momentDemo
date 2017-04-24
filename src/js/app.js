@@ -3,7 +3,7 @@
  */
 ;(function (angular) {
     var app = angular.module('app',['ui.router','ngTouch','infinite-scroll','angularLazyImg']);
-    app.controller('appController',['$scope','$location','$state',function ($scope,$location,$state) {
+    app.controller('appController',['$scope','$location',function ($scope,$location) {
         //用于激活移动端a标签伪类效果
         document.body.addEventListener('touchstart', function () { });
         $scope.$location = $location;
@@ -16,10 +16,14 @@
             $scope.isNav = !$scope.isNav;
             $scope.$broadcast('calltitle',{title:type})
         };
-        //接收来自authordetail路由的控制器的广播,用来修改标题名字
-        $scope.$on('authortitle',function (event, data) {
-            $scope.title = data.title+'的主页';
-        });
+        //定义用于反盗链的前缀地址,用于detail_tpl指令图片地址的拼接
+        $scope.fangdaolian = 'http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=';
+
+        //热门作者列表某一作者被点击时,修改nav标题名字,并且向author控制器发送广播,通知其向服务器获取数据
+        $scope.authortitle = function (obj) {
+            $scope.title = obj.name+'的主页';
+            $scope.$broadcast('authorDetailObj',obj);
+        };
         //监听窗口点击,当tabbar显示并且点击的id不是tabbar,则说明点击的要么是tarbar里的选项,要么就是右侧的内容页,那么就把导航隐藏掉,并且组织冒泡,防止内容页发生路由跳转
         $scope.autoNav = function () {
             $scope.homeItem = document.getElementsByTagName('homelist').length >0 ? document.getElementsByTagName('homelist') : document.getElementsByClassName('author-list');
@@ -59,9 +63,10 @@
         $scope.goPast = function () {
             $scope.title = '往期内容';
         };
-        //当点击列表进入详情页时,并向nav_dir指令发送广播
-        //传送进入前的滚动偏移量,以及当前详情对象
+        //当点击列表进入详情页时,并向nav_dir指令发送广播传送进入前的滚动偏移量,以及当前详情对象
+        //并且保存传入的详情对象,用于详情页的内容展示
         $scope.toDetail = function (obj) {
+            $scope.listItem = obj;
             $scope.$broadcast('preScroll',{
                 scrollNum:$('body').scrollTop(),
                 detailObj:obj

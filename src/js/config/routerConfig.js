@@ -4,6 +4,7 @@
 ;(function (angular) {
     //多视图 ==> 视图模板再次作为视图,控制器跳转到app下的子路由 ==>子路由模板直接插入组件(指令) ==>组件(指令)中发送请求,指令模板为当前视图的真正内容.
     angular.module('app').config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
+        $urlRouterProvider.otherwise('app/home');
         $stateProvider.state('app',{
             url:'/app',
             views:{
@@ -32,7 +33,7 @@
             url:'/home',
             template:'<homelist></homelist>',
             controller:[function () {
-                window.scrollTo(0,0);
+                window.scrollTo(0,50000);
             }],
             //10001 无图  10002有图有文字  10003有图无文字
         }).state('app.past',{
@@ -82,8 +83,6 @@
                 window.scrollTo(0,0);
             }]
         });
-
-        $urlRouterProvider.otherwise('app/home');
     }]);
     //home的路由不管怎么跳转,都在home视图内,所以都属于home控制器范围.
 })(angular);

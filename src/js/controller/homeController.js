@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    angular.module('app').controller('homeController',['$scope','myHttp','$stateParams',function ($scope,myHttp,$stateParams) {
+    angular.module('app').controller('homeController',['$scope','myHttp','$stateParams','$window','$timeout','$rootScope',function ($scope,myHttp,$stateParams,$window,$timeout,$rootScope) {
         //用于在homelist模板中辅助判断列表样式是大视图还是小视图
         $scope.pastnow = false;
         //程序刚启动时,使其处于加载状态
@@ -21,6 +21,7 @@
             $scope.homelist = res.posts;
             //数据获取后,取消加载状态,即为加载完成
             $scope.isLoading = false;
+            $timeout(function(){ $rootScope.$emit('lazyImg:refresh'); },1000);
         },function (err) {
             console.log(err);
         });

@@ -153,48 +153,38 @@
       }
     }
     .post2{
-      width: 100%;
-      .h(210);
-      position: relative;
-      .post2-img{
-        width: 95%;
-        .h(200);
-        position: absolute;
-        .bottom(0);
-        .left(0);
-        z-index: 100;
-        overflow: hidden;
-        img{
-          width: 100%;
-          position: absolute;
-          .left(0);
+       .border1{
+          width: 97%;
+          border:solid #ccc;
+          .borderwidth(1);
+          box-sizing: border-box;
+          position: relative;
+          .bottom(10);
+          .left(10);
+         .border2{
+           width: 100%;
+           border:solid #ccc;
+           .borderwidth(1);
+           box-sizing: border-box;
+           position: relative;
+           .bottom(-5);
+           .left(-5);
+           .post2Img{
+             width: 100%;
+             position: relative;
+             .bottom(-5);
+             .left(-5);
+             overflow: hidden;
+             img{
+               width: 100%;
+             }
+           }
+           .post2imgtoohigh{
+             .h(200);
+           }
+         }
         }
-      }
-      .border1{
-        //.w(320);
-        width: 95%;
-        .h(200);
-        border:solid #ccc;
-        .borderwidth(1);
-        box-sizing: border-box;
-        position: absolute;
-        .bottom(5);
-        .left(5);
-        z-index:10;
-        background-color: transparent;
-      }
-      .border2{
-        width: 95%;
-        .h(200);
-        border: solid #ccc;
-        .borderwidth(1);
-        box-sizing: border-box;
-        position: absolute;
-        .bottom(10);
-        .left(10);
-        z-index: 8;
-        background-color: transparent;
-      }
+
       }
     .post3{
       p{
@@ -323,3 +313,42 @@
   }
 }
 //-E在作者主页和往期内容页面时使用的样式,有区别就重写覆盖
+
+
+/*
+.post2{
+  width: 100%;
+  .h(210);
+  position: relative;
+  .post2-img{
+    width: 95%;
+    .h(200);
+    position: absolute;
+    .bottom(0);
+    .left(0);
+    z-index: 100;
+    overflow: hidden;
+    img{
+      width: 100%;
+      position: absolute;
+      .left(0);
+    }
+  }
+  .border1,.border2{
+    width: 95%;
+    .h(200);
+    border:solid #ccc;
+    .borderwidth(1);
+    box-sizing: border-box;
+    position: absolute;
+    .bottom(5);
+    .left(5);
+    z-index:10;
+    background-color: transparent;
+  }
+  .border2{
+    .bottom(10);
+    .left(10);
+    z-index: 8;
+  }
+}*/

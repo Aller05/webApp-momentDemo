@@ -12,6 +12,10 @@ body{
 .cur{
   color: #12d5b5;
 }
+img{
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
 homelist{
   display: inline-block;
   width: 100%;
@@ -50,4 +54,16 @@ homelist{
 }
 .noscroll{
   overflow: hidden;
+}
+
+.imgAnimate{
+  animation: lazyimg 0.8s linear 0s 1;
+}
+@keyframes lazyimg {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }

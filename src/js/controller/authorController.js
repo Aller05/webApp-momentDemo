@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    angular.module('app').controller('authorController',['$scope','myHttp','$timeout','$rootScope',function ($scope,myHttp,$timeout,$rootScope) {
+    angular.module('app').controller('authorController',['$scope','myHttp','$timeout','$rootScope','$location',function ($scope,myHttp,$timeout,$rootScope,$location) {
         $scope.isLoading = true;
         $scope.noMore = false;//没有更多了提示,默认隐藏
         var start = 0, count=20;
@@ -33,11 +33,12 @@
         $scope.authroListData(start,count);
         //滚动到底部加载更多数据
         $scope.authorListMore = function () {
+            //如果上一次数据加载还没结束,或者当前路由不是热门作者直接return
+            if($scope.isLoading || $location.url() != '/app/author'){
+                return;
+            }
             $timeout.cancel(timer);//节流
             var timer = $timeout(function () {
-                if($scope.isLoading){//如果上一次数据加载还没结束直接return
-                    return;
-                }
                 start +=count;
                 if(start>=$scope.authorlistTotal){
                     //如果开始数值大于数据总条数,不加载,显示没有更多提示
@@ -52,7 +53,7 @@
             //loading动画,请求数据时显示动画
             $scope.isLoading = true;
             var args = {
-                url:'http://139.199.107.194:8088/moment/author.php',
+                url:'http://127.0.0.1/api/author.php',
                 method:'jsonp',
                 params:{//该id为作者的id编号,用于向服务器请求点击的作者详细数据
                     id:data.uid

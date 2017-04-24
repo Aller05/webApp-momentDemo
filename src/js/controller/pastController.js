@@ -6,6 +6,7 @@
         $scope.pastnow = true;//当前在past页面状态为真
         $scope.isLoading = true;
         var num = 1,data = new Date();
+
         $scope.homelist = [];//定义空数组用来存放数据
         $scope.pastData = function () {
             $scope.isLoading = true;
@@ -32,7 +33,7 @@
         $scope.pastData();//第一次启动程序时调用获取初始数据
 
         //past页面滚动加载更多数据
-        $scope.scrollaa = function () {
+        $scope.pastMore = function () {
             if($scope.isLoading){//如果状态为加载中,直接跳出
                 return
             }

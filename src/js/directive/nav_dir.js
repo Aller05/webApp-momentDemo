@@ -86,7 +86,7 @@
                     $('body').animate({scrollTop:$scope.scrollToY},15);
                     //我喜欢的列表中第一个添加数量标题
                     if($scope.iLike.length>0){
-                        $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
+                        $scope.iLike[$scope.iLike.length-1].likeNum = '喜欢('+$scope.iLike.length+')';
                     }
                 };
                 $scope.$on('swipeBack',function () {

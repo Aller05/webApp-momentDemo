@@ -18,11 +18,22 @@
                 ele.html($scope.listItem.content);
                 //2.获取所有的img标签
                 var allImg = ele.find('img');
-                for (var i = 1; i < allImg.length-1; i++) {
-                    //3.遍历时避开第一个和最后一个,拼接url地址
-                    var url = $scope.listItem.photos[i-1].small.url;
-                    //4.设置内容图片src属性
-                    allImg[i].setAttribute('src',url);
+                //3.设置一个变量,用来排除所有图片中的首尾(作者头像)
+                var exceptNum = 1;
+                //4.有时服务器返回的数据,作者头像位置有两个img,其中一个多余的img类名为auth_author_mark
+                //当该类名存在,排除变量变为2,并把多余的隐藏掉
+                if(ele.find('.auth_author_mark')){
+                    exceptNum = 2;
+                    allImg[1].style.display='none';
+                    allImg[allImg.length-exceptNum].style.display='none';
+                }
+                if($scope.listItem.photos.length != 0){
+                    for (var i = exceptNum; i < allImg.length-exceptNum; i++) {
+                        //3.遍历时避开第一个和最后一个,拼接url地址
+                        var url = $scope.listItem.photos[i-exceptNum].small.url;
+                        //4.设置内容图片src属性
+                        allImg[i].setAttribute('src',url);
+                    }
                 }
                 //5.设置第一个和最后一个作者头像图片
                 allImg[0].setAttribute('src',$scope.listItem.author.avatar);

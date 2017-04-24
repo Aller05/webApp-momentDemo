@@ -1,8 +1,10 @@
 .author-list{
   background-color: #f9f9f9;
   .pt(50);
+  .pb(25);
   box-sizing: border-box;
   letter-spacing:0.5px;
+  position: relative;
   .author-list-top{
     .lh(40);
     .fs(16);
@@ -15,6 +17,7 @@
     width: 100%;
     .p(20);
     .pt(0);
+    .pb(0);
     >li{
       width: 100%;
       .pt(25);
@@ -47,6 +50,19 @@
         }
       }
     }
+  }
+  p{
+    color: #757575;
+    width: 100%;
+    .fs(16);
+    .lh(30);
+    .pb(10);
+    text-align: center;
+    background-color: #f9f9f9;
+    position: absolute;
+    .bottom(0);
+    z-index: 9;
+
   }
 
 

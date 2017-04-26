@@ -9,7 +9,16 @@
 }
 #list_scroll{
   .pt(50);
+  .noMoreHomeList{
+    width: 100%;
+    .lh(40);
+    background-color: #f8f8f8;
+    .fs(17);
+    text-align: center;
+    color: #a5a5a5;
+  }
 }
+
 .onLikemarginTop{
   .pt(90)!important;
 }
@@ -177,6 +186,7 @@
              overflow: hidden;
              img{
                width: 100%;
+               position: relative;
              }
            }
            .post2imgtoohigh{
@@ -314,41 +324,3 @@
 }
 //-E在作者主页和往期内容页面时使用的样式,有区别就重写覆盖
 
-
-/*
-.post2{
-  width: 100%;
-  .h(210);
-  position: relative;
-  .post2-img{
-    width: 95%;
-    .h(200);
-    position: absolute;
-    .bottom(0);
-    .left(0);
-    z-index: 100;
-    overflow: hidden;
-    img{
-      width: 100%;
-      position: absolute;
-      .left(0);
-    }
-  }
-  .border1,.border2{
-    width: 95%;
-    .h(200);
-    border:solid #ccc;
-    .borderwidth(1);
-    box-sizing: border-box;
-    position: absolute;
-    .bottom(5);
-    .left(5);
-    z-index:10;
-    background-color: transparent;
-  }
-  .border2{
-    .bottom(10);
-    .left(10);
-    z-index: 8;
-  }
-}*/

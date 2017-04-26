@@ -19,6 +19,8 @@
                     if($scope.iLike.length == 0){
                         $scope.isInLike = false;
                     }else{//否则查找
+                        //删除当前第一个的喜欢数量标题
+                        delete $scope.iLike[0].likeNum;
                         for (var i = 0; i < $scope.iLike.length; i++) {
                             if($scope.iLike[i].id == $scope.detailObj.id){
                                 $scope.isInLike = true;
@@ -36,6 +38,7 @@
                     $scope.isInLike = true;
                     //收藏数+1
                     $scope.detailObj.like_count++;
+                    //从头部添加到我喜欢的列表
                     $scope.iLike.unshift($scope.detailObj);
                 };
                 //点击红色心,取消收藏,然后显示白色心
@@ -86,7 +89,7 @@
                     $('body').animate({scrollTop:$scope.scrollToY},15);
                     //我喜欢的列表中第一个添加数量标题
                     if($scope.iLike.length>0){
-                        $scope.iLike[$scope.iLike.length-1].likeNum = '喜欢('+$scope.iLike.length+')';
+                        $scope.iLike[0].likeNum = '喜欢('+$scope.iLike.length+')';
                     }
                 };
                 $scope.$on('swipeBack',function () {

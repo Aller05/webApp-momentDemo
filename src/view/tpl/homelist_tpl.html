@@ -45,7 +45,7 @@
                 <div ng-if="!(authormsg||pastnow||isLikeNow)">
                     <div class="border1">
                         <div class="border2">
-                            <div class="post2Img" ng-class="{post2imgtoohigh:(list.thumbs[0].small.height>350)}">
+                            <div class="post2Img" ng-class="{post2imgtoohigh:(list.thumbs[0].small.height>200)}">
                                 <img lazy-img="{{ list.thumbs[0].small.url}}" style="top:{{-list.thumbs[0].small.height/2+100+'px'}}">
                             </div>
                         </div>
@@ -66,7 +66,7 @@
     </div>
 
     <!--今日一刻页面显示的跳转按钮-->
-    <div ng-if="(authormsg || helpLoading)"
+    <div ng-if="(!authormsg && helpLoading)"
          class="go-past"
          ng-click="goPast()"
          ng-show="!isLoading">
@@ -79,4 +79,7 @@
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
     </div>
+
+    <!--作者主页底部显示-->
+    <p class="noMoreHomeList" ng-if="(authormsg && !isLoading)">暂时没有更多内容～</p>
 </div>

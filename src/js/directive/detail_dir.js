@@ -15,6 +15,7 @@
                     $scope.isDetailCss = false;
                 },20);
                 //1.将获取到的html片段注入到指令内
+                console.log($scope.listItem);
                 ele.html($scope.listItem.content);
                 //2.获取所有的img标签
                 var allImg = ele.find('img');
@@ -22,7 +23,7 @@
                 var exceptNum = 1;
                 //4.有时服务器返回的数据,作者头像位置有两个img,其中一个多余的img类名为auth_author_mark
                 //当该类名存在,排除变量变为2,并把多余的隐藏掉
-                if(ele.find('.auth_author_mark')){
+                if(ele.find('.auth_author_mark').length>0){
                     exceptNum = 2;
                     allImg[1].style.display='none';
                     allImg[allImg.length-exceptNum].style.display='none';

@@ -53,7 +53,7 @@
             //loading动画,请求数据时显示动画
             $scope.isLoading = true;
             var args = {
-                url:'http://127.0.0.1/api/author.php',
+                url:'http://139.199.107.194:8088/moment/author.php',
                 method:'jsonp',
                 params:{//该id为作者的id编号,用于向服务器请求点击的作者详细数据
                     id:data.uid

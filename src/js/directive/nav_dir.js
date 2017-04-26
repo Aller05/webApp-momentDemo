@@ -60,8 +60,8 @@
                         ele.find('a')[0].style.display='none';
                         ele.find('a')[1].style.display='block';
                         ele.find('a')[2].style.opacity= 1;
-                        if(newValue.indexOf('author') != '-1'){
-                            //在作者详情页时不显示
+                        if((newValue.indexOf('author') != '-1')||(newValue.indexOf('column') != '-1')){
+                            //在作者详情页和栏目详情页时不显示
                             ele.find('a')[2].style.opacity= 0;
                         }
                     }

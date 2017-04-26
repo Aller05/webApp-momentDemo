@@ -20,9 +20,9 @@
                     templateUrl:'view/author_tpl.html',
                     controller:'authorController'
                 },
-                content:{
-                    // templateUrl:'view/home_tpl.html',
-                    // controller:'homeController'
+                column:{
+                    templateUrl:'view/column_tpl.html',
+                    controller:'columnController'
                 },
                 my:{
                     templateUrl:'view/iLike_tpl.html',
@@ -50,6 +50,12 @@
             template:'<authorlist></authorlist>'
         }).state('app.authordetail',{
             url:'/authordetail',
+            template:'<homelist></homelist>'
+        }).state('app.column',{
+            url:'/column',
+            templateUrl:'view/tpl/columns_tpl.html'
+        }).state('app.columndetail',{
+            url:'/columndetail',
             template:'<homelist></homelist>'
         }).state('app.iLike',{
             url:'/iLike',

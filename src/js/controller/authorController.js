@@ -62,7 +62,6 @@
             myHttp.getHttp(args,function (res) {
                 //该命名和home的list一样,因为复用了homelist指令,但是此时控制器归authorController,所以并不会冲突.
                 $scope.homelist = res.posts;
-                console.log(res);
                 $scope.authormsg = res.author;
                 $scope.isLoading = false;//请求完数据隐藏
                 //获取到数据后向懒加载插件内发送刷新广播,为了修复第一次打开页面不滚动图片

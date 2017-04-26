@@ -9,6 +9,7 @@ body{
 @import "tpl/detail_tpl";
 @import "tpl/author_tpl";
 @import "tpl/login_tpl";
+@import "tpl/columns_tpl";
 .cur{
   color: #12d5b5;
 }
@@ -53,6 +54,10 @@ homelist{
 }
 
 .imgAnimate{
+  -webkit-animation: lazyimg 0.5s linear 0s 1;
+  -moz-animation: lazyimg 0.5s linear 0s 1;
+  -ms-animation: lazyimg 0.5s linear 0s 1;
+  -o-animation: lazyimg 0.5s linear 0s 1;
   animation: lazyimg 0.5s linear 0s 1;
 }
 @keyframes lazyimg {

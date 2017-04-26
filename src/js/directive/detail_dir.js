@@ -15,7 +15,6 @@
                     $scope.isDetailCss = false;
                 },20);
                 //1.将获取到的html片段注入到指令内
-                console.log($scope.listItem);
                 ele.html($scope.listItem.content);
                 //2.获取所有的img标签
                 var allImg = ele.find('img');

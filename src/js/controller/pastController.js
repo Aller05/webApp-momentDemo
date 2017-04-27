@@ -5,12 +5,12 @@
     angular.module('app').controller('pastController',['$scope','myHttp','$location','$timeout',function ($scope,myHttp,$location,$timeout) {
         $scope.pastnow = true;//当前在past页面状态为真
         $scope.isLoading = true;
-        var num = 1,data = new Date();
+        var dayNum = -1,mouthNum = 1,data = new Date();
 
         $scope.homelist = [];//定义空数组用来存放数据
         $scope.pastData = function () {
             $scope.isLoading = true;
-            var day = data.getFullYear()+'-'+(data.getMonth()+1)+'-'+(data.getDate()-num);
+            var day = data.getFullYear()+'-'+(data.getMonth()+mouthNum)+'-'+(data.getDate()+dayNum);
             var args = {
                 url:'http://139.199.107.194:8088/moment/past.php',
                 method:'jsonp',
@@ -41,7 +41,11 @@
             var timer = $timeout(function () {
                 //加定时器防止从past到其他页面跳转的瞬间发生滚动触发事件
                 if($location.url() == '/app/past' && !$scope.isLoading){
-                    num++;
+                    dayNum--;
+                    if((data.getDate()+dayNum)==0){
+                        dayNum = (30-data.getDate());
+                        mouthNum--;
+                    }
                     $scope.pastData();
                 }
             },40);

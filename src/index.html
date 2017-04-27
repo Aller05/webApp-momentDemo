@@ -8,7 +8,15 @@
     <meta name="referrer" content="never">
     <title>一刻</title>
     <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="shortcut icon" href="images/todayicon.png">
     <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.min.js" defer></script>
+    <script src="lib/angular.min.js" defer></script>
+    <script src="lib/angular-ui-router.min.js" defer></script>
+    <script src="lib/angular-touch.min.js" defer></script>
+    <script src="lib/ng-infinite-scroll.min.js" defer></script>
+    <script src="lib/angular-lazy-img.js" defer></script>
+    <script src="js/index.js" defer></script>
 </head>
 <body ng-class="{noscroll:(isNav||loginIn)}" ng-swipe-left="swipeLeft()">
 <!--下面是否添加的类,指的是当nav图标被点击时,是否添加那个类名(在index.less里)-->
@@ -34,11 +42,5 @@
 <login ng-class="{loginHidden:loginIn}"></login>
 
 </body>
-<script src="lib/jquery.min.js"></script>
-<script src="lib/angular.min.js"></script>
-<script src="lib/angular-ui-router.min.js"></script>
-<script src="lib/angular-touch.min.js"></script>
-<script src="lib/ng-infinite-scroll.min.js"></script>
-<script src="lib/angular-lazy-img.js"></script>
-<script src="js/index.js"></script>
+
 </html>

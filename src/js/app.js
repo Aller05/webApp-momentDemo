@@ -24,9 +24,9 @@
             $scope.title = obj.name+'的主页';
             $scope.$broadcast('authorDetailObj',obj);
         };
-        //监听窗口点击,当tabbar显示并且点击的id不是tabbar,则说明点击的要么是tarbar里的选项,要么就是右侧的内容页,那么就把导航隐藏掉,并且组织冒泡,防止内容页发生路由跳转
+        //监听窗口点击,当tabbar显示并且点击的id不是tabbar,则说明点击的要么是tarbar里的选项,要么就是右侧的内容页,那么就把导航隐藏掉,并且阻止冒泡,防止内容页发生路由跳转,helpTarget代表热门作者和栏目浏览
         $scope.autoNav = function () {
-            $scope.homeItem = document.getElementsByTagName('homelist').length >0 ? document.getElementsByTagName('homelist') : document.getElementsByClassName('author-list');
+            $scope.homeItem = document.getElementsByTagName('homelist').length >0 ? document.getElementsByTagName('homelist') : document.getElementsByClassName('helpTarget');
             angular.forEach($scope.homeItem,function (data, index, array) {
                 data.addEventListener('click',function () {
                     if(event.target.id != 'tabbar' && $scope.isNav){

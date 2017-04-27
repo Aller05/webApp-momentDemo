@@ -26,7 +26,8 @@
              ng-repeat="(key,list) in homelist"
              ng-click="toDetail(list)"
              ng-class="{isTopList:(list.topdate&&!isLikeNow)}"
-             ui-sref="app.detail">
+             ui-sref="app.detail"
+             ng-if="!(list.column.name == '洗洗睡')">
             <!--悬浮日期标题,正常显示第一个,我喜欢的视图显示第二个-->
             <div ng-class="{listDate:list.topdate, isPastNow:list.isPast}"
                  ng-if="(list.topdate && !isLikeNow)">{{list.topdate| date:'dd MMM'}}</div>

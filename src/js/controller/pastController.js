@@ -19,9 +19,9 @@
                 }
             };
             myHttp.getHttp(args,function (res) {
-                res.posts[0].topdate = res.date;
-                res.posts[0].isPast = true;
-                for (var i = 0; i < res.posts.length; i++) {
+                res.posts[1].topdate = res.date;
+                res.posts[1].isPast = true;
+                for (var i = 1; i < res.posts.length; i++) {
                     $scope.homelist.push(res.posts[i])
                 }
                 //数据获取后,取消加载状态,即为加载完成

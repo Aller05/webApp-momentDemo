@@ -1,9 +1,6 @@
 //loading这个类的目的是,加载时添加,使页面隐藏到屏幕右侧,加载完成时取消类,使其有入场动画
 .loading{
   -webkit-transform: translate(100%,0);
-  -moz-transform: translate(100%,0);
-  -ms-transform: translate(100%,0);
-  -o-transform: translate(100%,0);
   transform: translate(100%,0);
   opacity: 0;
 }
@@ -42,31 +39,19 @@
     top: 0;
     left: 0;
     -webkit-animation: bounce 2.0s infinite ease-in-out;
-    -moz-animation: bounce 2.0s infinite ease-in-out;
-    -ms-animation: bounce 2.0s infinite ease-in-out;
-    -o-animation: bounce 2.0s infinite ease-in-out;
     animation: bounce 2.0s infinite ease-in-out;
   }
   .double-bounce2 {
     -webkit-animation-delay: -1.0s;
-    -moz-animation-delay: -1.0s;
-    -ms-animation-delay: -1.0s;
-    -o-animation-delay: -1.0s;
     animation-delay: -1.0s;
   }
   @-webkit-keyframes bounce {
     0%, 100% {
       -webkit-transform: scale(0);
-      -moz-transform: scale(0);
-      -ms-transform: scale(0);
-      -o-transform: scale(0);
       transform: scale(0);
     }
     50% {
        -webkit-transform: scale(1);
-       -moz-transform: scale(1);
-       -ms-transform: scale(1);
-       -o-transform: scale(1);
        transform: scale(1);
       }
   }

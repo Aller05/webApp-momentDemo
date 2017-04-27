@@ -2,11 +2,12 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    angular.module('app').directive('nav',['$location','$timeout','$state',function ($location,$timeout,$state) {
+    angular.module('app').directive('nav',['$location','$timeout',function ($location,$timeout) {
         return{
             restrict:'EA',
             templateUrl:'view/tpl/nav_tpl.html',
             link:function ($scope, ele, attr) {
+                $scope.$location = $location;
                 //接收来自tabbar的广播,用于保存一级页面title名,用于从二级跳回到一级页面时更改nav的title
                 $scope.$on('calltitle',function (event, data) {
                     $scope.preTitleName = data.title;
@@ -48,13 +49,11 @@
                     $scope.detailObj.like_count--;
                     $scope.iLike.splice($scope.theLikeIndex,1);
                 };
-
                 //初始时,显示导航图标,隐藏返回图标
                 //监听锚点变化,当进入详情时,隐藏导航,显示返回
                 //返回图标点击时,历史回退,导航显示,返回隐藏
                 ele.find('a')[1].style.display='none';
                 ele.find('a')[2].style.opacity= 0;
-                $scope.$location = $location;
                 $scope.$watch('$location.url()',function (newValue, oldValue) {
                     if(newValue.indexOf('detail') != '-1'){
                         ele.find('a')[0].style.display='none';

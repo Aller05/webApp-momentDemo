@@ -6,7 +6,10 @@
         $scope.pastnow = true;//当前在past页面状态为真
         $scope.isLoading = true;
         var dayNum = -1,mouthNum = 1,data = new Date();
-
+        if(data.getDate() == 1){
+            dayNum = 29;
+            mouthNum = 0;
+        }
         $scope.homelist = [];//定义空数组用来存放数据
         $scope.pastData = function () {
             $scope.isLoading = true;

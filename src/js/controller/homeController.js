@@ -10,7 +10,7 @@
         //程序刚启动时,详情页是否向右侧位移100%为真,就是默认隐藏在右侧.
         $scope.isDetailCss = true;
         var args = {
-            url:'http://139.199.107.194:8088/moment/homelist.php',
+            url:'http://115.159.45.169/api/homelist.php',
             method:'jsonp',
             params:null
         };

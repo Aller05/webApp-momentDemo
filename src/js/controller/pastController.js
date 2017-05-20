@@ -15,7 +15,7 @@
             $scope.isLoading = true;
             var day = data.getFullYear()+'-'+(data.getMonth()+mouthNum)+'-'+(data.getDate()+dayNum);
             var args = {
-                url:'http://139.199.107.194:8088/moment/past.php',
+                url:'http://115.159.45.169/api/past.php',
                 method:'jsonp',
                 params:{
                     index:day

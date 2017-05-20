@@ -8,7 +8,7 @@
         //在'栏目浏览'不显示小标题
         $scope.noSmallTitle = true;
         var args = {
-            url:'http://139.199.107.194:8088/moment/column.php',
+            url:'http://115.159.45.169/api/column.php',
             method:'jsonp',
             params:null
         };
@@ -31,7 +31,7 @@
             //程序刚启动时,使其处于加载状态
             $scope.isLoading = true;
             var args = {
-                url:'http://139.199.107.194:8088/moment/columnDetail.php',
+                url:'http://115.159.45.169/api/columnDetail.php',
                 method:'jsonp',
                 params:{
                     id:column.id

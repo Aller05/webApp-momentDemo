@@ -2,7 +2,7 @@
  * Created by Administrator on 2017/4/8.
  */
 ;(function (angular) {
-    var app = angular.module('app',['ui.router','ngTouch','infinite-scroll','angularLazyImg']);
+    var app = angular.module('app',['ui.router','ngTouch','ngTap','infinite-scroll','angularLazyImg']);
     app.controller('appController',['$scope','$location',function ($scope,$location) {
         //用于激活移动端a标签伪类效果
         document.body.addEventListener('touchstart', function () { });

@@ -1,20 +1,20 @@
 <div class="nav" >
     <!--第一个图片为导航图标,第二个为返回图标-->
-    <a ng-click="nav()">
+    <a ng-touchstart="nav()">
         <img src="images/navlist.png">
     </a>
-    <a ng-click="goBack(event)">
+    <a ng-touchstart="goBack(event)">
         <img src="images/goback.png">
     </a>
     <span ng-bind="title"></span>
     <a >
         <img src="images/whiteheart.png"
              ng-show="!isInLike"
-             ng-click="saveLike()">
+             ng-touchstart="saveLike()">
 
         <img src="images/redheart.png"
              ng-show="isInLike"
-             ng-click="deleteLike()">
+             ng-touchstart="deleteLike()">
         <span ng-bind="detailObj.like_count"></span>
     </a>
 </div>

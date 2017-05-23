@@ -7,7 +7,7 @@
         <li class="columnList"
             ng-repeat="(key,column) in columns"
             ng-class="{noRightBorder:(key%2 == 1)}"
-            ng-click="toColumnDetail(column)"
+            ng-touchstart="toColumnDetail(column)"
             ui-sref="app.columndetail">
             <img lazy-img="{{column.icon}}" >
             <h3 ng-bind="column.name"></h3>

@@ -1,26 +1,26 @@
 <div id="tabbar"  ng-class="{tabbarIn:isNav}">
     <ul>
-        <li ng-click="isNav = !isNav ; loginIn = !loginIn" >
+        <li ng-touchstart="isNav = !isNav ; loginIn = !loginIn" >
             <img src="images/my_icon.png" alt="">
             <span>登录</span>
         </li>
-        <li ng-click="click('今日一刻')" ui-sref="app.home">
+        <li ng-touchstart="click('今日一刻')" ui-sref="app.home">
             <img src="images/02.png" alt="">
             <span ng-class="{cur:title == '今日一刻'}">今日一刻</span>
         </li>
-        <li ng-click="click('往期内容')" ui-sref="app.past">
+        <li ng-touchstart="click('往期内容')" ui-sref="app.past">
             <img src="images/03.png" alt="">
             <span ng-class="{cur:title == '往期内容'}">往期内容</span>
         </li>
-        <li ng-click="click('热门作者')" ui-sref="app.author">
+        <li ng-touchstart="click('热门作者')" ui-sref="app.author">
             <img src="images/04.png" alt="">
             <span ng-class="{cur:title == '热门作者'}">热门作者</span>
         </li>
-        <li ng-click="click('栏目浏览')" ui-sref="app.column">
+        <li ng-touchstart="click('栏目浏览')" ui-sref="app.column">
             <img src="images/05.png" alt="">
             <span ng-class="{cur:title == '栏目浏览'}">栏目浏览</span>
         </li>
-        <li ng-click="click('我喜欢的')" ui-sref="app.iLike">
+        <li ng-touchstart="click('我喜欢的')" ui-sref="app.iLike">
             <img src="images/06.png" alt="">
             <span ng-class="{cur:title == '我喜欢的'}">我喜欢的</span>
         </li>

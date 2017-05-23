@@ -24,7 +24,7 @@
         <!--循环遍历的列表项-->
         <div class="list"
              ng-repeat="(key,list) in homelist"
-             ng-click="toDetail(list)"
+             ng-touchstart="toDetail(list)"
              ng-class="{isTopList:(list.topdate&&!isLikeNow)}"
              ui-sref="app.detail"
              ng-if="!(list.column.name == '洗洗睡')">
@@ -75,7 +75,7 @@
     <!--今日一刻页面显示的跳转按钮-->
     <div ng-if="(!authormsg && helpLoading && !noSmallTitle)"
          class="go-past"
-         ng-click="goPast()"
+         ng-touchstart="goPast()"
          ng-show="!isLoading">
         <a ui-sref="app.past">往期内容</a>
     </div>

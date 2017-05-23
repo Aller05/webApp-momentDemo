@@ -1,5 +1,6 @@
-;(function (angualr) {
-    angular.module("ngTouch", [])
+
+;(function (angular) {
+    angular.module("ngTap", [])
         .directive("ngTouchstart", function () {
             return {
                 controller: ["$scope", "$element", function ($scope, $element) {

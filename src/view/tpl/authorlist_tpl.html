@@ -10,7 +10,7 @@
     <ul>
         <li ng-repeat="(key,list) in authrolist"
             ui-sref="app.authordetail"
-            ng-touchstart="authortitle(list)">
+            ng-click="authortitle(list)">
             <img lazy-img="{{list.avatar}}" >
             <dl>
                 <dt ng-bind="list.name"></dt>

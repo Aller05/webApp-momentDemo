@@ -7,8 +7,11 @@
 
                     $element.bind("touchstart", onTouchStart);
                     function onTouchStart(event) {
+                        event.stopPropagation();
                         var method = $element.attr("ng-touchstart");
                         $scope.$apply(method);
+
+
                     }
 
                 }]
